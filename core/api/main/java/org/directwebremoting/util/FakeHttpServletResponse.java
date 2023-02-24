@@ -33,9 +33,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Mock implementation of the HttpServletResponse interface.
@@ -47,7 +47,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FakeHttpServletResponse implements HttpServletResponse
 {
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#setCharacterEncoding(java.lang.String)
+     * @see jakarta.servlet.ServletResponse#setCharacterEncoding(java.lang.String)
      */
     public void setCharacterEncoding(String characterEncoding)
     {
@@ -55,7 +55,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#getCharacterEncoding()
+     * @see jakarta.servlet.ServletResponse#getCharacterEncoding()
      */
     public String getCharacterEncoding()
     {
@@ -63,7 +63,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#getOutputStream()
+     * @see jakarta.servlet.ServletResponse#getOutputStream()
      */
     public ServletOutputStream getOutputStream()
     {
@@ -71,7 +71,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#getWriter()
+     * @see jakarta.servlet.ServletResponse#getWriter()
      */
     public PrintWriter getWriter() throws UnsupportedEncodingException
     {
@@ -85,7 +85,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#flushBuffer()
+     * @see jakarta.servlet.ServletResponse#flushBuffer()
      */
     public void flushBuffer()
     {
@@ -110,7 +110,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#sendError(int, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#sendError(int, java.lang.String)
      */
     public void sendError(int newStatus, String newErrorMessage) throws IOException
     {
@@ -125,7 +125,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#sendError(int)
+     * @see jakarta.servlet.http.HttpServletResponse#sendError(int)
      */
     public void sendError(int newStatus) throws IOException
     {
@@ -149,7 +149,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#sendRedirect(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#sendRedirect(java.lang.String)
      */
     public void sendRedirect(String url) throws IOException
     {
@@ -172,7 +172,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#setStatus(int)
+     * @see jakarta.servlet.http.HttpServletResponse#setStatus(int)
      */
     public void setStatus(int status)
     {
@@ -180,7 +180,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#setStatus(int, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#setStatus(int, java.lang.String)
      */
     @Deprecated
     public void setStatus(int status, String errorMessage)
@@ -220,11 +220,17 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#setContentLength(int)
+     * @see jakarta.servlet.ServletResponse#setContentLength(int)
      */
     public void setContentLength(int contentLength)
     {
         this.contentLength = contentLength;
+    }
+
+    @Override
+    public void setContentLengthLong(long l)
+    {
+
     }
 
     /**
@@ -237,7 +243,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#setContentType(java.lang.String)
+     * @see jakarta.servlet.ServletResponse#setContentType(java.lang.String)
      */
     public void setContentType(String contentType)
     {
@@ -255,7 +261,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#getContentType()
+     * @see jakarta.servlet.ServletResponse#getContentType()
      */
     public String getContentType()
     {
@@ -263,7 +269,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#setBufferSize(int)
+     * @see jakarta.servlet.ServletResponse#setBufferSize(int)
      */
     public void setBufferSize(int bufferSize)
     {
@@ -271,7 +277,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#getBufferSize()
+     * @see jakarta.servlet.ServletResponse#getBufferSize()
      */
     public int getBufferSize()
     {
@@ -287,7 +293,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#isCommitted()
+     * @see jakarta.servlet.ServletResponse#isCommitted()
      */
     public boolean isCommitted()
     {
@@ -295,7 +301,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#resetBuffer()
+     * @see jakarta.servlet.ServletResponse#resetBuffer()
      */
     public void resetBuffer()
     {
@@ -308,7 +314,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#reset()
+     * @see jakarta.servlet.ServletResponse#reset()
      */
     public void reset()
     {
@@ -325,7 +331,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#setLocale(java.util.Locale)
+     * @see jakarta.servlet.ServletResponse#setLocale(java.util.Locale)
      */
     public void setLocale(Locale locale)
     {
@@ -333,7 +339,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponse#getLocale()
+     * @see jakarta.servlet.ServletResponse#getLocale()
      */
     public Locale getLocale()
     {
@@ -341,7 +347,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#addCookie(javax.servlet.http.Cookie)
+     * @see jakarta.servlet.http.HttpServletResponse#addCookie(jakarta.servlet.http.Cookie)
      */
     public void addCookie(Cookie cookie)
     {
@@ -376,7 +382,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeUrl(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeUrl(java.lang.String)
      */
     @Deprecated
     public String encodeUrl(String url)
@@ -385,7 +391,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeURL(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeURL(java.lang.String)
      */
     public String encodeURL(String url)
     {
@@ -393,7 +399,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeRedirectUrl(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeRedirectUrl(java.lang.String)
      */
     @Deprecated
     public String encodeRedirectUrl(String url)
@@ -402,7 +408,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeRedirectURL(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeRedirectURL(java.lang.String)
      */
     public String encodeRedirectURL(String url)
     {
@@ -410,7 +416,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#addHeader(java.lang.String, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#addHeader(java.lang.String, java.lang.String)
      */
     public void addHeader(String name, String value)
     {
@@ -418,7 +424,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#setHeader(java.lang.String, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#setHeader(java.lang.String, java.lang.String)
      */
     public void setHeader(String name, String value)
     {
@@ -426,7 +432,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#addDateHeader(java.lang.String, long)
+     * @see jakarta.servlet.http.HttpServletResponse#addDateHeader(java.lang.String, long)
      */
     public void addDateHeader(String name, long value)
     {
@@ -434,7 +440,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#setDateHeader(java.lang.String, long)
+     * @see jakarta.servlet.http.HttpServletResponse#setDateHeader(java.lang.String, long)
      */
     public void setDateHeader(String name, long value)
     {
@@ -445,7 +451,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#addIntHeader(java.lang.String, int)
+     * @see jakarta.servlet.http.HttpServletResponse#addIntHeader(java.lang.String, int)
      */
     public void addIntHeader(String name, int value)
     {
@@ -453,7 +459,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#setIntHeader(java.lang.String, int)
+     * @see jakarta.servlet.http.HttpServletResponse#setIntHeader(java.lang.String, int)
      */
     public void setIntHeader(String name, int value)
     {
@@ -489,7 +495,7 @@ public class FakeHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#containsHeader(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#containsHeader(java.lang.String)
      */
     public boolean containsHeader(String name)
     {

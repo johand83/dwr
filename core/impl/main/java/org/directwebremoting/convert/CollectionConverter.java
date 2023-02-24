@@ -11,8 +11,8 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.extend.AbstractConverter;
 import org.directwebremoting.extend.ArrayOutboundVariable;
@@ -211,5 +211,5 @@ public class CollectionConverter extends AbstractConverter
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(CollectionConverter.class);
+    private static final Logger log = LoggerFactory.getLogger(CollectionConverter.class);
 }

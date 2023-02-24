@@ -1,7 +1,7 @@
 package org.directwebremoting.util;
 
-import org.apache.commons.logging.LogFactory;
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
@@ -16,7 +16,7 @@ public final class LogErrorHandler implements ErrorHandler
      */
     public void fatalError(SAXParseException ex)
     {
-        log.fatal(getMessage(ex));
+        log.error(getMessage(ex));
     }
 
     /* (non-Javadoc)
@@ -57,5 +57,5 @@ public final class LogErrorHandler implements ErrorHandler
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(LogErrorHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(LogErrorHandler.class);
 }

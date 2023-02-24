@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.annotations.Filter;
 import org.directwebremoting.annotations.Filters;
 import org.directwebremoting.annotations.RemoteMethod;
@@ -32,7 +32,7 @@ import org.w3c.dom.NodeList;
 public abstract class CreatorParserHelper extends ConverterParserHelper
 {
 
-    private static final Log log = LogFactory.getLog(CreatorParserHelper.class);
+    private static final Logger log = LoggerFactory.getLogger(CreatorParserHelper.class);
 
     /**
      * Get a list of the defined Creators.

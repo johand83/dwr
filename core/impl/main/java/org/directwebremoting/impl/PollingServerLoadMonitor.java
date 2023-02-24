@@ -1,7 +1,7 @@
 package org.directwebremoting.impl;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A default implementation of ServerLoadMonitor
@@ -68,5 +68,5 @@ public class PollingServerLoadMonitor extends AbstractServerLoadMonitor
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(PollingServerLoadMonitor.class);
+    private static final Logger log = LoggerFactory.getLogger(PollingServerLoadMonitor.class);
 }

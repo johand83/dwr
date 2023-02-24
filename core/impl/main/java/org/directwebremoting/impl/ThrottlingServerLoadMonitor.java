@@ -4,8 +4,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.WaitController;
 import org.directwebremoting.util.HitMonitor;
 
@@ -356,5 +356,5 @@ public class ThrottlingServerLoadMonitor extends AbstractServerLoadMonitor
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(ThrottlingServerLoadMonitor.class);
+    private static final Logger log = LoggerFactory.getLogger(ThrottlingServerLoadMonitor.class);
 }

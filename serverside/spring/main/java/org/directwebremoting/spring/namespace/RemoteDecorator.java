@@ -1,7 +1,7 @@
 package org.directwebremoting.spring.namespace;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.spring.BeanCreator;
 import org.directwebremoting.spring.CreatorConfig;
 import org.directwebremoting.spring.LocalClassUtils;
@@ -22,7 +22,7 @@ import org.w3c.dom.Node;
 public class RemoteDecorator extends CreatorParserHelper implements BeanDefinitionDecorator
 {
 
-    private static final Log log = LogFactory.getLog(RemoteDecorator.class);
+    private static final Logger log = LoggerFactory.getLogger(RemoteDecorator.class);
 
     public BeanDefinitionHolder decorate(Node remoteElement, BeanDefinitionHolder bean, ParserContext parserContext)
     {

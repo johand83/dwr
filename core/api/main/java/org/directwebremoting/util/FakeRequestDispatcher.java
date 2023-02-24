@@ -1,11 +1,11 @@
 package org.directwebremoting.util;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
-import org.apache.commons.logging.LogFactory;
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mock implementation of the RequestDispatcher interface.
@@ -25,7 +25,7 @@ public class FakeRequestDispatcher implements RequestDispatcher
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.RequestDispatcher#forward(javax.servlet.ServletRequest, javax.servlet.ServletResponse)
+     * @see jakarta.servlet.RequestDispatcher#forward(jakarta.servlet.ServletRequest, jakarta.servlet.ServletResponse)
      */
     public void forward(ServletRequest request, ServletResponse response)
     {
@@ -48,7 +48,7 @@ public class FakeRequestDispatcher implements RequestDispatcher
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.RequestDispatcher#include(javax.servlet.ServletRequest, javax.servlet.ServletResponse)
+     * @see jakarta.servlet.RequestDispatcher#include(jakarta.servlet.ServletRequest, jakarta.servlet.ServletResponse)
      */
     public void include(ServletRequest request, ServletResponse response)
     {
@@ -70,5 +70,5 @@ public class FakeRequestDispatcher implements RequestDispatcher
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(FakeRequestDispatcher.class);
+    private static final Logger log = LoggerFactory.getLogger(FakeRequestDispatcher.class);
 }

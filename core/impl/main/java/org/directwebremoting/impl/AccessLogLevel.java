@@ -1,7 +1,7 @@
 package org.directwebremoting.impl;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author David Marginian [david at butterdev dot com].
@@ -93,6 +93,6 @@ public enum AccessLogLevel
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(AccessLogLevel.class);
+    private static final Logger log = LoggerFactory.getLogger(AccessLogLevel.class);
 }
 

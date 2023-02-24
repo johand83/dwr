@@ -2,11 +2,11 @@ package org.directwebremoting.servlet;
 
 import java.util.List;
 
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Container;
 import org.directwebremoting.WebContextFactory.WebContextBuilder;
 import org.directwebremoting.impl.StartupUtil;
@@ -31,7 +31,7 @@ public class DwrListener implements ServletContextListener
      * contained beans for ones that implement {@link ServletContextListener}
      * and pass the {@link ServletContextListener#contextDestroyed} event on.
      * @param ev The event object to pass on
-     * @see javax.servlet.ServletContextListener#contextDestroyed(javax.servlet.ServletContextEvent)
+     * @see jakarta.servlet.ServletContextListener#contextDestroyed(jakarta.servlet.ServletContextEvent)
      */
     public void contextDestroyed(ServletContextEvent ev)
     {
@@ -61,5 +61,5 @@ public class DwrListener implements ServletContextListener
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DwrListener.class);
+    private static final Logger log = LoggerFactory.getLogger(DwrListener.class);
 }

@@ -2,8 +2,8 @@ package org.directwebremoting.impl;
 
 import java.util.Collection;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Container;
 import org.directwebremoting.extend.InitializingBean;
 import org.directwebremoting.util.LocalUtil;
@@ -64,5 +64,5 @@ public abstract class AbstractContainer implements Container
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(AbstractContainer.class);
+    private static final Logger log = LoggerFactory.getLogger(AbstractContainer.class);
 }

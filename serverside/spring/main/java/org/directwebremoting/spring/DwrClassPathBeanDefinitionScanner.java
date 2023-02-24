@@ -6,8 +6,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.annotations.DataTransferObject;
 import org.directwebremoting.annotations.GlobalFilter;
 import org.directwebremoting.annotations.Param;
@@ -39,7 +39,7 @@ import org.springframework.util.StringUtils;
 public class DwrClassPathBeanDefinitionScanner extends ClassPathBeanDefinitionScanner
 {
 
-    private static final Log log = LogFactory.getLog(DwrClassPathBeanDefinitionScanner.class);
+    private static final Logger log = LoggerFactory.getLogger(DwrClassPathBeanDefinitionScanner.class);
 
     public DwrClassPathBeanDefinitionScanner(BeanDefinitionRegistry registry)
     {

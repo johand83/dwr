@@ -3,8 +3,8 @@ package org.directwebremoting.convert;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.extend.AbstractConverter;
 import org.directwebremoting.extend.InboundVariable;
@@ -54,5 +54,5 @@ public class URIConverter extends AbstractConverter
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(URIConverter.class);
+    private static final Logger log = LoggerFactory.getLogger(URIConverter.class);
 }

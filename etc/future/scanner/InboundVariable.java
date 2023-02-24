@@ -2,8 +2,8 @@ package org.directwebremoting.extend;
 
 import java.util.StringTokenizer;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.json.InvalidJsonException;
 import org.directwebremoting.json.JsonArray;
@@ -390,5 +390,5 @@ public final class InboundVariable
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(InboundVariable.class);
+    private static final Logger log = LoggerFactory.getLogger(InboundVariable.class);
 }

@@ -5,12 +5,12 @@ import java.io.RandomAccessFile;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
 import org.apache.bsf.BSFException;
 import org.apache.bsf.BSFManager;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.WebContext;
 import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.extend.AbstractCreator;
@@ -326,7 +326,7 @@ public class ScriptedCreator extends AbstractCreator implements Creator
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(ScriptedCreator.class);
+    private static final Logger log = LoggerFactory.getLogger(ScriptedCreator.class);
 
     /**
      * The cached type of object that we are creating.

@@ -1,7 +1,7 @@
 package org.directwebremoting.spring.namespace;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -16,7 +16,7 @@ import org.w3c.dom.NodeList;
 public class SignatureDecorator implements BeanDefinitionDecorator
 {
 
-    private static final Log log = LogFactory.getLog(SignatureDecorator.class);
+    private static final Logger log = LoggerFactory.getLogger(SignatureDecorator.class);
 
     public BeanDefinitionHolder decorate(Node signatureElement, BeanDefinitionHolder bean, ParserContext parserContext)
     {

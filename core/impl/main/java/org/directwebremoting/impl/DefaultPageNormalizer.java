@@ -7,12 +7,12 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.WebContext;
 import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.extend.PageNormalizer;
@@ -276,5 +276,5 @@ public class DefaultPageNormalizer implements PageNormalizer
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DefaultPageNormalizer.class);
+    private static final Logger log = LoggerFactory.getLogger(DefaultPageNormalizer.class);
 }

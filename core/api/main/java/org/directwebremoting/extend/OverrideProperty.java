@@ -1,7 +1,7 @@
 package org.directwebremoting.extend;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 
 /**
@@ -68,5 +68,5 @@ public class OverrideProperty implements Property
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(OverrideProperty.class);
+    private static final Logger log = LoggerFactory.getLogger(OverrideProperty.class);
 }

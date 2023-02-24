@@ -3,8 +3,8 @@ package org.directwebremoting.guice;
 import java.util.Collection;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.Creator;
 import org.directwebremoting.extend.CreatorManager;
 import org.directwebremoting.impl.DefaultCreatorManager;
@@ -201,5 +201,5 @@ public class InternalCreatorManager implements CreatorManager
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(InternalCreatorManager.class);
+    private static final Logger log = LoggerFactory.getLogger(InternalCreatorManager.class);
 }

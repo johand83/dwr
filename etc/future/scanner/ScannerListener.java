@@ -2,8 +2,8 @@ package dwr;
 
 import java.io.IOException;
 import java.util.Set;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
 
 public class ScannerListener implements ServletContextListener {
 

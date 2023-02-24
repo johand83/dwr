@@ -8,10 +8,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.WebContext;
 import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.extend.Creator;
@@ -279,5 +279,5 @@ public class DefaultCreatorManager implements CreatorManager, UninitializingBean
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DefaultCreatorManager.class);
+    private static final Logger log = LoggerFactory.getLogger(DefaultCreatorManager.class);
 }

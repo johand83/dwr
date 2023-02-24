@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.DownloadManager;
 import org.directwebremoting.io.FileTransfer;
 
@@ -125,5 +125,5 @@ public class InMemoryDownloadManager extends PurgingDownloadManager implements D
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(InMemoryDownloadManager.class);
+    private static final Logger log = LoggerFactory.getLogger(InMemoryDownloadManager.class);
 }

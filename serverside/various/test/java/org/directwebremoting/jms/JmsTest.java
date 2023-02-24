@@ -13,8 +13,8 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import javax.jms.Topic;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.util.LocalUtil;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -198,7 +198,7 @@ public class JmsTest
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(JmsTest.class);
+    private static final Logger log = LoggerFactory.getLogger(JmsTest.class);
 
     /**
      *

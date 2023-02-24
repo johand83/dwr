@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.extend.ArrayOutboundVariable;
 import org.directwebremoting.extend.ConvertUtil;
@@ -159,7 +159,7 @@ public class ArrayConverter implements Converter
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(ArrayConverter.class);
+    private static final Logger log = LoggerFactory.getLogger(ArrayConverter.class);
 
     /**
      * The converter manager to which we forward array members for conversion

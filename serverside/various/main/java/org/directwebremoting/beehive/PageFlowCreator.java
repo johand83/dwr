@@ -3,10 +3,10 @@ package org.directwebremoting.beehive;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
-import org.apache.commons.logging.LogFactory;
-import org.apache.commons.logging.Log;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.extend.AbstractCreator;
 import org.directwebremoting.extend.Creator;
@@ -121,7 +121,7 @@ public class PageFlowCreator extends AbstractCreator implements Creator
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(PageFlowCreator.class);
+    private static final Logger log = LoggerFactory.getLogger(PageFlowCreator.class);
 
     private Class<?> instanceType = null;
 

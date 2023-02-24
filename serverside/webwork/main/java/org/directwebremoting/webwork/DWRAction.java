@@ -3,15 +3,15 @@ package org.directwebremoting.webwork;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.directwebremoting.util.FakeHttpServletResponse;
 import org.directwebremoting.util.LocalUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.opensymphony.webwork.ServletActionContext;
 import com.opensymphony.webwork.dispatcher.DispatcherUtils;
@@ -257,7 +257,7 @@ public class DWRAction
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DWRAction.class);
+    private static final Logger log = LoggerFactory.getLogger(DWRAction.class);
 
     private static final String DWRACTIONPROCESSOR_INIT_PARAM = "dwrActionProcessor";
 

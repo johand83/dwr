@@ -1,7 +1,7 @@
 package org.directwebremoting.spring.namespace;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.spring.BeanCreator;
 import org.directwebremoting.spring.CreatorConfig;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -21,7 +21,7 @@ import org.w3c.dom.Element;
 public class ProxyParser extends CreatorParserHelper implements BeanDefinitionParser
 {
 
-    private static final Log log = LogFactory.getLog(ProxyParser.class);
+    private static final Logger log = LoggerFactory.getLogger(ProxyParser.class);
 
     public BeanDefinition parse(Element proxyElement, ParserContext parserContext)
     {

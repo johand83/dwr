@@ -28,12 +28,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
-import javax.servlet.ServletContext;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletContext;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Backing class for Servlet 2.4 fake ServletContext.
@@ -64,7 +64,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
         String tempDir = System.getProperty("java.io.tmpdir");
         if (tempDir != null)
         {
-            attributes.put("javax.servlet.context.tempdir", new File(tempDir));
+            attributes.put("jakarta.servlet.context.tempdir", new File(tempDir));
         }
     }
 
@@ -92,7 +92,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getMajorVersion()
+     * @see jakarta.servlet.ServletContext#getMajorVersion()
      */
     public int getMajorVersion()
     {
@@ -100,7 +100,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getMinorVersion()
+     * @see jakarta.servlet.ServletContext#getMinorVersion()
      */
     public int getMinorVersion()
     {
@@ -108,7 +108,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getMimeType(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getMimeType(java.lang.String)
      */
     public String getMimeType(String filePath)
     {
@@ -116,7 +116,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getResourcePaths(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getResourcePaths(java.lang.String)
      */
     public Set<String> getResourcePaths(String path)
     {
@@ -124,7 +124,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getResource(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getResource(java.lang.String)
      */
     public URL getResource(String path) throws MalformedURLException
     {
@@ -132,7 +132,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getResourceAsStream(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getResourceAsStream(java.lang.String)
      */
     public InputStream getResourceAsStream(String path)
     {
@@ -147,7 +147,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getRequestDispatcher(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getRequestDispatcher(java.lang.String)
      */
     public RequestDispatcher getRequestDispatcher(String path)
     {
@@ -159,7 +159,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getNamedDispatcher(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getNamedDispatcher(java.lang.String)
      */
     public RequestDispatcher getNamedDispatcher(String path)
     {
@@ -167,7 +167,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getServlet(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getServlet(java.lang.String)
      */
     @Deprecated
     public Servlet getServlet(String name)
@@ -176,7 +176,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getServlets()
+     * @see jakarta.servlet.ServletContext#getServlets()
      */
     @Deprecated
     public Enumeration<Servlet> getServlets()
@@ -185,7 +185,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getServletNames()
+     * @see jakarta.servlet.ServletContext#getServletNames()
      */
     @Deprecated
     public Enumeration<String> getServletNames()
@@ -194,7 +194,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#log(java.lang.String)
+     * @see jakarta.servlet.ServletContext#log(java.lang.String)
      */
     public void log(String message)
     {
@@ -202,7 +202,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#log(java.lang.Exception, java.lang.String)
+     * @see jakarta.servlet.ServletContext#log(java.lang.Exception, java.lang.String)
      */
     @Deprecated
     public void log(Exception ex, String message)
@@ -211,7 +211,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#log(java.lang.String, java.lang.Throwable)
+     * @see jakarta.servlet.ServletContext#log(java.lang.String, java.lang.Throwable)
      */
     public void log(String message, Throwable ex)
     {
@@ -219,7 +219,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getRealPath(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getRealPath(java.lang.String)
      */
     public String getRealPath(String path)
     {
@@ -227,7 +227,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getServerInfo()
+     * @see jakarta.servlet.ServletContext#getServerInfo()
      */
     public String getServerInfo()
     {
@@ -235,7 +235,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getInitParameter(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getInitParameter(java.lang.String)
      */
     public String getInitParameter(String name)
     {
@@ -253,7 +253,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getInitParameterNames()
+     * @see jakarta.servlet.ServletContext#getInitParameterNames()
      */
     public Enumeration<String> getInitParameterNames()
     {
@@ -261,7 +261,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getAttribute(java.lang.String)
+     * @see jakarta.servlet.ServletContext#getAttribute(java.lang.String)
      */
     public Object getAttribute(String name)
     {
@@ -269,7 +269,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getAttributeNames()
+     * @see jakarta.servlet.ServletContext#getAttributeNames()
      */
     public Enumeration<String> getAttributeNames()
     {
@@ -277,7 +277,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#setAttribute(java.lang.String, java.lang.Object)
+     * @see jakarta.servlet.ServletContext#setAttribute(java.lang.String, java.lang.Object)
      */
     public void setAttribute(String name, Object value)
     {
@@ -292,7 +292,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#removeAttribute(java.lang.String)
+     * @see jakarta.servlet.ServletContext#removeAttribute(java.lang.String)
      */
     public void removeAttribute(String name)
     {
@@ -310,7 +310,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContext#getServletContextName()
+     * @see jakarta.servlet.ServletContext#getServletContextName()
      */
     public String getServletContextName()
     {
@@ -329,7 +329,7 @@ class FakeServletContextObject24 // Note: does not implement interface as we are
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(FakeServletContextObject24.class);
+    private static final Logger log = LoggerFactory.getLogger(FakeServletContextObject24.class);
 
     /**
      * The resource path to allow us to fetch resources from the disk

@@ -1,10 +1,10 @@
 package org.directwebremoting;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Accessor for the current {@link WebContext}.
@@ -84,5 +84,5 @@ public class WebContextFactory
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(WebContextFactory.class);
+    private static final Logger log = LoggerFactory.getLogger(WebContextFactory.class);
 }

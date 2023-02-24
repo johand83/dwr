@@ -15,8 +15,9 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.directwebremoting.io.Item;
 import org.directwebremoting.io.ItemUpdate;
 import org.directwebremoting.io.MatchedItems;
@@ -612,5 +613,5 @@ public class MapStoreProvider<T> extends AbstractStoreProvider<T> implements Sto
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(MapStoreProvider.class);
+    private static final Logger log = LoggerFactory.getLogger(MapStoreProvider.class);
 }

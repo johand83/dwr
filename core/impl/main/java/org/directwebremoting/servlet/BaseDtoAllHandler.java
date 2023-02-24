@@ -11,7 +11,7 @@ import org.directwebremoting.extend.ConverterManager;
 public abstract class BaseDtoAllHandler extends GeneratedJavaScriptHandler
 {
     /* (non-Javadoc)
-     * @see org.directwebremoting.servlet.TemplateHandler#generateTemplate(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see org.directwebremoting.servlet.TemplateHandler#generateTemplate(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)
      */
     @Override
     protected String generateTemplate(String contextPath, String servletPath, String pathInfo) throws IOException

@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.convert.BeanConverter;
 import org.directwebremoting.extend.PlainProperty;
@@ -206,5 +206,5 @@ public class H4BeanConverter extends BeanConverter
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(H4BeanConverter.class);
+    private static final Logger log = LoggerFactory.getLogger(H4BeanConverter.class);
 }

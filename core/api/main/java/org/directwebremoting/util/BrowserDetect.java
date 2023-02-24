@@ -1,9 +1,9 @@
 package org.directwebremoting.util;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Various functions to do with working out what is at the other end of the
@@ -296,5 +296,5 @@ public class BrowserDetect
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(BrowserDetect.class);
+    private static final Logger log = LoggerFactory.getLogger(BrowserDetect.class);
 }

@@ -15,16 +15,17 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.ReadListener;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletInputStream;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpSession;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Backing class for Servlet 2.4 fake requests.
@@ -32,7 +33,7 @@ import org.apache.commons.logging.LogFactory;
 class FakeHttpServletRequestObject24 // Note: does not implement interface as we are mapping versions in runtime
 {
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getAuthType()
+     * @see jakarta.servlet.http.HttpServletRequest#getAuthType()
      */
     public String getAuthType()
     {
@@ -40,7 +41,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getCookies()
+     * @see jakarta.servlet.http.HttpServletRequest#getCookies()
      */
     public Cookie[] getCookies()
     {
@@ -48,7 +49,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getDateHeader(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletRequest#getDateHeader(java.lang.String)
      */
     public long getDateHeader(String name)
     {
@@ -56,7 +57,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getHeader(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletRequest#getHeader(java.lang.String)
      */
     public String getHeader(String name)
     {
@@ -64,7 +65,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getHeaders(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletRequest#getHeaders(java.lang.String)
      */
     public Enumeration<String> getHeaders(String name)
     {
@@ -72,7 +73,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getHeaderNames()
+     * @see jakarta.servlet.http.HttpServletRequest#getHeaderNames()
      */
     public Enumeration<String> getHeaderNames()
     {
@@ -80,7 +81,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getIntHeader(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletRequest#getIntHeader(java.lang.String)
      */
     public int getIntHeader(String name)
     {
@@ -88,7 +89,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getMethod()
+     * @see jakarta.servlet.http.HttpServletRequest#getMethod()
      */
     public String getMethod()
     {
@@ -109,7 +110,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     private String method = "GET";
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getPathInfo()
+     * @see jakarta.servlet.http.HttpServletRequest#getPathInfo()
      */
     public String getPathInfo()
     {
@@ -130,7 +131,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     private String pathInfo;
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getPathTranslated()
+     * @see jakarta.servlet.http.HttpServletRequest#getPathTranslated()
      */
     public String getPathTranslated()
     {
@@ -138,7 +139,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getContextPath()
+     * @see jakarta.servlet.http.HttpServletRequest#getContextPath()
      */
     public String getContextPath()
     {
@@ -147,7 +148,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getQueryString()
+     * @see jakarta.servlet.http.HttpServletRequest#getQueryString()
      */
     public String getQueryString()
     {
@@ -155,7 +156,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getRemoteUser()
+     * @see jakarta.servlet.http.HttpServletRequest#getRemoteUser()
      */
     public String getRemoteUser()
     {
@@ -163,7 +164,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#isUserInRole(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletRequest#isUserInRole(java.lang.String)
      */
     public boolean isUserInRole(String role)
     {
@@ -184,7 +185,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     private final Set<String> roles = new HashSet<String>();
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getUserPrincipal()
+     * @see jakarta.servlet.http.HttpServletRequest#getUserPrincipal()
      */
     public Principal getUserPrincipal()
     {
@@ -192,7 +193,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getRequestedSessionId()
+     * @see jakarta.servlet.http.HttpServletRequest#getRequestedSessionId()
      */
     public String getRequestedSessionId()
     {
@@ -200,7 +201,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getRequestURI()
+     * @see jakarta.servlet.http.HttpServletRequest#getRequestURI()
      */
     public String getRequestURI()
     {
@@ -209,7 +210,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getRequestURL()
+     * @see jakarta.servlet.http.HttpServletRequest#getRequestURL()
      */
     public StringBuffer getRequestURL()
     {
@@ -218,7 +219,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getServletPath()
+     * @see jakarta.servlet.http.HttpServletRequest#getServletPath()
      */
     public String getServletPath()
     {
@@ -227,7 +228,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getSession(boolean)
+     * @see jakarta.servlet.http.HttpServletRequest#getSession(boolean)
      */
     public HttpSession getSession(boolean create)
     {
@@ -240,7 +241,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#getSession()
+     * @see jakarta.servlet.http.HttpServletRequest#getSession()
      */
     public HttpSession getSession()
     {
@@ -248,7 +249,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#isRequestedSessionIdValid()
+     * @see jakarta.servlet.http.HttpServletRequest#isRequestedSessionIdValid()
      */
     public boolean isRequestedSessionIdValid()
     {
@@ -256,7 +257,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#isRequestedSessionIdFromCookie()
+     * @see jakarta.servlet.http.HttpServletRequest#isRequestedSessionIdFromCookie()
      */
     public boolean isRequestedSessionIdFromCookie()
     {
@@ -264,7 +265,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletRequest#isRequestedSessionIdFromURL()
+     * @see jakarta.servlet.http.HttpServletRequest#isRequestedSessionIdFromURL()
      */
     public boolean isRequestedSessionIdFromURL()
     {
@@ -272,7 +273,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /**
-     * @see javax.servlet.http.HttpServletRequest#isRequestedSessionIdFromUrl()
+     * @see jakarta.servlet.http.HttpServletRequest#isRequestedSessionIdFromUrl()
      * @deprecated
      */
     @Deprecated
@@ -282,7 +283,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getAttribute(java.lang.String)
+     * @see jakarta.servlet.ServletRequest#getAttribute(java.lang.String)
      */
     public Object getAttribute(String name)
     {
@@ -290,7 +291,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getAttributeNames()
+     * @see jakarta.servlet.ServletRequest#getAttributeNames()
      */
     public Enumeration<String> getAttributeNames()
     {
@@ -298,7 +299,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getCharacterEncoding()
+     * @see jakarta.servlet.ServletRequest#getCharacterEncoding()
      */
     public String getCharacterEncoding()
     {
@@ -306,7 +307,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#setCharacterEncoding(java.lang.String)
+     * @see jakarta.servlet.ServletRequest#setCharacterEncoding(java.lang.String)
      */
     public void setCharacterEncoding(String characterEncoding) throws UnsupportedEncodingException
     {
@@ -314,7 +315,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getContentLength()
+     * @see jakarta.servlet.ServletRequest#getContentLength()
      */
     public int getContentLength()
     {
@@ -322,7 +323,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getContentType()
+     * @see jakarta.servlet.ServletRequest#getContentType()
      */
     public String getContentType()
     {
@@ -343,12 +344,30 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     private String contentType = "text/plain";
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getInputStream()
+     * @see jakarta.servlet.ServletRequest#getInputStream()
      */
     public ServletInputStream getInputStream() throws IOException
     {
         return new ServletInputStream()
         {
+            @Override
+            public boolean isFinished()
+            {
+                return false;
+            }
+
+            @Override
+            public boolean isReady()
+            {
+                return false;
+            }
+
+            @Override
+            public void setReadListener(ReadListener readListener)
+            {
+
+            }
+
             private final ByteArrayInputStream proxy = new ByteArrayInputStream(content);
 
             /* (non-Javadoc)
@@ -483,7 +502,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getParameter(java.lang.String)
+     * @see jakarta.servlet.ServletRequest#getParameter(java.lang.String)
      */
     public String getParameter(String name)
     {
@@ -491,7 +510,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getParameterNames()
+     * @see jakarta.servlet.ServletRequest#getParameterNames()
      */
     public Enumeration<String> getParameterNames()
     {
@@ -499,7 +518,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getParameterValues(java.lang.String)
+     * @see jakarta.servlet.ServletRequest#getParameterValues(java.lang.String)
      */
     public String[] getParameterValues(String name)
     {
@@ -507,7 +526,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getParameterMap()
+     * @see jakarta.servlet.ServletRequest#getParameterMap()
      */
     public Map<String, String[]> getParameterMap()
     {
@@ -515,7 +534,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getProtocol()
+     * @see jakarta.servlet.ServletRequest#getProtocol()
      */
     public String getProtocol()
     {
@@ -524,7 +543,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getScheme()
+     * @see jakarta.servlet.ServletRequest#getScheme()
      */
     public String getScheme()
     {
@@ -533,7 +552,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getServerName()
+     * @see jakarta.servlet.ServletRequest#getServerName()
      */
     public String getServerName()
     {
@@ -542,7 +561,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getServerPort()
+     * @see jakarta.servlet.ServletRequest#getServerPort()
      */
     public int getServerPort()
     {
@@ -551,7 +570,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getReader()
+     * @see jakarta.servlet.ServletRequest#getReader()
      */
     public BufferedReader getReader() throws IOException
     {
@@ -559,7 +578,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getRemoteAddr()
+     * @see jakarta.servlet.ServletRequest#getRemoteAddr()
      */
     public String getRemoteAddr()
     {
@@ -568,7 +587,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getRemoteHost()
+     * @see jakarta.servlet.ServletRequest#getRemoteHost()
      */
     public String getRemoteHost()
     {
@@ -586,7 +605,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#setAttribute(java.lang.String, java.lang.Object)
+     * @see jakarta.servlet.ServletRequest#setAttribute(java.lang.String, java.lang.Object)
      */
     public void setAttribute(String name, Object o)
     {
@@ -594,7 +613,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#removeAttribute(java.lang.String)
+     * @see jakarta.servlet.ServletRequest#removeAttribute(java.lang.String)
      */
     public void removeAttribute(String name)
     {
@@ -602,7 +621,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getLocale()
+     * @see jakarta.servlet.ServletRequest#getLocale()
      */
     public Locale getLocale()
     {
@@ -610,7 +629,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getLocales()
+     * @see jakarta.servlet.ServletRequest#getLocales()
      */
     public Enumeration<Locale> getLocales()
     {
@@ -618,7 +637,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#isSecure()
+     * @see jakarta.servlet.ServletRequest#isSecure()
      */
     public boolean isSecure()
     {
@@ -626,21 +645,21 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletRequest#getRequestDispatcher(java.lang.String)
+     * @see jakarta.servlet.ServletRequest#getRequestDispatcher(java.lang.String)
      */
     public RequestDispatcher getRequestDispatcher(String path)
     {
         return new RequestDispatcher()
         {
             /* (non-Javadoc)
-             * @see javax.servlet.RequestDispatcher#include(javax.servlet.ServletRequest, javax.servlet.ServletResponse)
+             * @see jakarta.servlet.RequestDispatcher#include(jakarta.servlet.ServletRequest, jakarta.servlet.ServletResponse)
              */
             public void include(ServletRequest request, ServletResponse response) throws ServletException, IOException
             {
             }
 
             /* (non-Javadoc)
-             * @see javax.servlet.RequestDispatcher#forward(javax.servlet.ServletRequest, javax.servlet.ServletResponse)
+             * @see jakarta.servlet.RequestDispatcher#forward(jakarta.servlet.ServletRequest, jakarta.servlet.ServletResponse)
              */
             public void forward(ServletRequest request, ServletResponse response) throws ServletException, IOException
             {
@@ -649,7 +668,7 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     }
 
     /**
-     * @see javax.servlet.ServletRequest#getRealPath(java.lang.String)
+     * @see jakarta.servlet.ServletRequest#getRealPath(java.lang.String)
      * @deprecated
      */
     @Deprecated
@@ -671,5 +690,5 @@ class FakeHttpServletRequestObject24 // Note: does not implement interface as we
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(FakeHttpServletRequestObject24.class);
+    private static final Logger log = LoggerFactory.getLogger(FakeHttpServletRequestObject24.class);
 }

@@ -5,8 +5,8 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 
 /**
  * A fake implementation of ServletConfig for cases (Like inside Spring) when
@@ -54,7 +54,7 @@ public class FakeServletConfig implements ServletConfig
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletConfig#getServletName()
+     * @see jakarta.servlet.ServletConfig#getServletName()
      */
     public String getServletName()
     {
@@ -62,7 +62,7 @@ public class FakeServletConfig implements ServletConfig
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletConfig#getServletContext()
+     * @see jakarta.servlet.ServletConfig#getServletContext()
      */
     public ServletContext getServletContext()
     {
@@ -78,7 +78,7 @@ public class FakeServletConfig implements ServletConfig
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletConfig#getInitParameter(java.lang.String)
+     * @see jakarta.servlet.ServletConfig#getInitParameter(java.lang.String)
      */
     public String getInitParameter(String paramName)
     {
@@ -94,7 +94,7 @@ public class FakeServletConfig implements ServletConfig
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletConfig#getInitParameterNames()
+     * @see jakarta.servlet.ServletConfig#getInitParameterNames()
      */
     public Enumeration<String> getInitParameterNames()
     {

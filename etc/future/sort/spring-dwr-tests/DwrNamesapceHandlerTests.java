@@ -3,7 +3,7 @@ package org.directwebremoting.spring;
 import java.io.IOException;
 import java.util.Collections;
 
-import javax.servlet.ServletConfig;
+import jakarta.servlet.ServletConfig;
 
 import junit.framework.TestCase;
 

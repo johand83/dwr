@@ -12,8 +12,8 @@ import java.util.jar.JarInputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ClasspathScanner enables you to find the set of classes that match some
@@ -270,5 +270,5 @@ public class ClasspathScanner
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(ClasspathScanner.class);
+    private static final Logger log = LoggerFactory.getLogger(ClasspathScanner.class);
 }

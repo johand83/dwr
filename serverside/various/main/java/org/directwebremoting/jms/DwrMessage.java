@@ -13,8 +13,8 @@ import javax.jms.Message;
 import javax.jms.ObjectMessage;
 import javax.jms.TextMessage;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Hub;
 import org.directwebremoting.event.MessageEvent;
 
@@ -892,5 +892,5 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DwrMessage.class);
+    private static final Logger log = LoggerFactory.getLogger(DwrMessage.class);
 }

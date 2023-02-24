@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ServerContextFactory;
 import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.extend.AbstractCreator;
@@ -195,7 +195,7 @@ public class SpringCreator extends AbstractCreator implements Creator
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(SpringCreator.class);
+    private static final Logger log = LoggerFactory.getLogger(SpringCreator.class);
 
     /**
      * The Spring beans factory from which we get our beans.

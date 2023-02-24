@@ -1,7 +1,7 @@
 package org.directwebremoting.extend;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An {@link OutboundVariable} that we know to be unable to recurse
@@ -84,5 +84,5 @@ public class NonNestedOutboundVariable implements OutboundVariable
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(NonNestedOutboundVariable.class);
+    private static final Logger log = LoggerFactory.getLogger(NonNestedOutboundVariable.class);
 }

@@ -6,13 +6,13 @@ import java.io.Writer;
 import java.util.Collection;
 import java.util.Locale;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponseWrapper;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Used by ExecutionContext to forward results back via javascript.
@@ -38,35 +38,35 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#addCookie(javax.servlet.http.Cookie)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#addCookie(jakarta.servlet.http.Cookie)
      */
     public void addCookie(Cookie cookie)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#addDateHeader(java.lang.String, long)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#addDateHeader(java.lang.String, long)
      */
     public void addDateHeader(String name, long value)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#addHeader(java.lang.String, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#addHeader(java.lang.String, java.lang.String)
      */
     public void addHeader(String name, String value)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#addIntHeader(java.lang.String, int)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#addIntHeader(java.lang.String, int)
      */
     public void addIntHeader(String name, int value)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#containsHeader(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#containsHeader(java.lang.String)
      */
     public boolean containsHeader(String name)
     {
@@ -74,7 +74,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#flushBuffer()
+     * @see jakarta.servlet.ServletResponseWrapper#flushBuffer()
      */
     public void flushBuffer() throws IOException
     {
@@ -82,7 +82,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#getBufferSize()
+     * @see jakarta.servlet.ServletResponseWrapper#getBufferSize()
      */
     public int getBufferSize()
     {
@@ -90,7 +90,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#getCharacterEncoding()
+     * @see jakarta.servlet.ServletResponseWrapper#getCharacterEncoding()
      */
     public String getCharacterEncoding()
     {
@@ -99,7 +99,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
 
     /**
      * @return The MIME type of the content
-     * @see javax.servlet.ServletResponse#setContentType(String)
+     * @see jakarta.servlet.ServletResponse#setContentType(String)
      */
     public String getContentType()
     {
@@ -117,7 +117,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#getLocale()
+     * @see jakarta.servlet.ServletResponseWrapper#getLocale()
      */
     public Locale getLocale()
     {
@@ -125,7 +125,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#getOutputStream()
+     * @see jakarta.servlet.ServletResponseWrapper#getOutputStream()
      */
     public ServletOutputStream getOutputStream()
     {
@@ -151,7 +151,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#getWriter()
+     * @see jakarta.servlet.ServletResponseWrapper#getWriter()
      */
     public PrintWriter getWriter()
     {
@@ -159,7 +159,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#isCommitted()
+     * @see jakarta.servlet.ServletResponseWrapper#isCommitted()
      */
     public boolean isCommitted()
     {
@@ -167,21 +167,21 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#reset()
+     * @see jakarta.servlet.ServletResponseWrapper#reset()
      */
     public void reset()
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#resetBuffer()
+     * @see jakarta.servlet.ServletResponseWrapper#resetBuffer()
      */
     public void resetBuffer()
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#sendError(int)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#sendError(int)
      */
     public void sendError(int newStatus)
     {
@@ -197,7 +197,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#sendError(int, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#sendError(int, java.lang.String)
      */
     public void sendError(int newStatus, String newErrorMessage)
     {
@@ -214,7 +214,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#sendRedirect(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#sendRedirect(java.lang.String)
      */
     public void sendRedirect(String location)
     {
@@ -230,7 +230,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#setBufferSize(int)
+     * @see jakarta.servlet.ServletResponseWrapper#setBufferSize(int)
      */
     public void setBufferSize(int bufferSize)
     {
@@ -239,7 +239,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
 
     /**
      * @param characterEncoding The new encoding to use for response strings
-     * @see javax.servlet.ServletResponseWrapper#getCharacterEncoding()
+     * @see jakarta.servlet.ServletResponseWrapper#getCharacterEncoding()
      */
     public void setCharacterEncoding(String characterEncoding)
     {
@@ -247,7 +247,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#setContentLength(int)
+     * @see jakarta.servlet.ServletResponseWrapper#setContentLength(int)
      */
     public void setContentLength(int i)
     {
@@ -255,8 +255,14 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
         // same as the content length of the new document.
     }
 
+    @Override
+    public void setContentLengthLong(long l)
+    {
+
+    }
+
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#setContentType(java.lang.String)
+     * @see jakarta.servlet.ServletResponseWrapper#setContentType(java.lang.String)
      */
     public void setContentType(String contentType)
     {
@@ -264,28 +270,28 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#setDateHeader(java.lang.String, long)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#setDateHeader(java.lang.String, long)
      */
     public void setDateHeader(String name, long value)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#setHeader(java.lang.String, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#setHeader(java.lang.String, java.lang.String)
      */
     public void setHeader(String name, String value)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#setIntHeader(java.lang.String, int)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#setIntHeader(java.lang.String, int)
      */
     public void setIntHeader(String name, int value)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletResponseWrapper#setLocale(java.util.Locale)
+     * @see jakarta.servlet.ServletResponseWrapper#setLocale(java.util.Locale)
      */
     public void setLocale(Locale locale)
     {
@@ -293,7 +299,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponseWrapper#setStatus(int)
+     * @see jakarta.servlet.http.HttpServletResponseWrapper#setStatus(int)
      */
     public void setStatus(int status)
     {
@@ -302,7 +308,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /**
-     * @see javax.servlet.http.HttpServletResponse#setStatus(int, java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#setStatus(int, java.lang.String)
      * @deprecated
      */
     @Deprecated
@@ -314,7 +320,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeURL(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeURL(java.lang.String)
      */
     public String encodeURL(String paramString)
     {
@@ -322,7 +328,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeRedirectURL(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeRedirectURL(java.lang.String)
      */
     public String encodeRedirectURL(String paramString)
     {
@@ -330,7 +336,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeUrl(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeUrl(java.lang.String)
      */
     public String encodeUrl(String paramString)
     {
@@ -338,7 +344,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#encodeRedirectUrl(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#encodeRedirectUrl(java.lang.String)
      */
     public String encodeRedirectUrl(String paramString)
     {
@@ -346,7 +352,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#getHeader(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#getHeader(java.lang.String)
      */
     public String getHeader(String paramString)
     {
@@ -354,7 +360,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#getHeaders(java.lang.String)
+     * @see jakarta.servlet.http.HttpServletResponse#getHeaders(java.lang.String)
      */
     public Collection<String> getHeaders(String paramString)
     {
@@ -362,7 +368,7 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServletResponse#getHeaderNames()
+     * @see jakarta.servlet.http.HttpServletResponse#getHeaderNames()
      */
     public Collection<String> getHeaderNames()
     {
@@ -422,5 +428,5 @@ public final class SwallowingHttpServletResponse implements HttpServletResponse
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(SwallowingHttpServletResponse.class);
+    private static final Logger log = LoggerFactory.getLogger(SwallowingHttpServletResponse.class);
 }

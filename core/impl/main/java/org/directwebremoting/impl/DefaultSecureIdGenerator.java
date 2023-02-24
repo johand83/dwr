@@ -9,8 +9,8 @@ import java.security.NoSuchProviderException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.IdGenerator;
 import org.directwebremoting.util.Base64;
 
@@ -251,5 +251,5 @@ public class DefaultSecureIdGenerator implements IdGenerator
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DefaultSecureIdGenerator.class);
+    private static final Logger log = LoggerFactory.getLogger(DefaultSecureIdGenerator.class);
 }

@@ -10,8 +10,9 @@ import java.util.Map;
 import java.util.SortedSet;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.directwebremoting.ServerContextFactory;
 import org.directwebremoting.extend.ConverterManager;
 import org.directwebremoting.extend.InboundVariable;
@@ -404,5 +405,5 @@ public abstract class AbstractStoreProvider<T> implements StoreProvider<T>
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(AbstractStoreProvider.class);
+    private static final Logger log = LoggerFactory.getLogger(AbstractStoreProvider.class);
 }

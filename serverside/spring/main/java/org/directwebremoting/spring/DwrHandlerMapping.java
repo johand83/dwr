@@ -3,8 +3,8 @@ package org.directwebremoting.spring;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
@@ -16,7 +16,7 @@ import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
  */
 public class DwrHandlerMapping extends SimpleUrlHandlerMapping {
 
-	private static final Log log = LogFactory.getLog(DwrHandlerMapping.class);
+	private static final Logger log = LoggerFactory.getLogger(DwrHandlerMapping.class);
 
 	/**
 	 * Maps the following URLs to dwr controller

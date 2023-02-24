@@ -2,8 +2,8 @@ package org.directwebremoting.impl;
 
 import java.io.InputStream;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.DwrConstants;
 import org.directwebremoting.util.LocalUtil;
 import org.xml.sax.EntityResolver;
@@ -61,5 +61,5 @@ public final class DTDEntityResolver implements EntityResolver
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DTDEntityResolver.class);
+    private static final Logger log = LoggerFactory.getLogger(DTDEntityResolver.class);
 }

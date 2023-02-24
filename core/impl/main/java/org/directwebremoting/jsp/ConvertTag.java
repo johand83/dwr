@@ -1,9 +1,9 @@
 package org.directwebremoting.jsp;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.tagext.TagSupport;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.tagext.TagSupport;
 
 import org.directwebremoting.Container;
 import org.directwebremoting.ScriptBuffer;
@@ -25,7 +25,7 @@ import org.directwebremoting.extend.ScriptBufferUtil;
 public class ConvertTag extends TagSupport
 {
     /* (non-Javadoc)
-     * @see javax.servlet.jsp.tagext.TagSupport#doEndTag()
+     * @see jakarta.servlet.jsp.tagext.TagSupport#doEndTag()
      */
     @Override
     public int doEndTag() throws JspException

@@ -11,8 +11,8 @@ import java.util.Map.Entry;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.extend.ConstructorProperty;
 import org.directwebremoting.extend.ConvertUtil;
@@ -621,5 +621,5 @@ public abstract class BasicObjectConverter implements NamedConverter
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(BasicObjectConverter.class);
+    private static final Logger log = LoggerFactory.getLogger(BasicObjectConverter.class);
 }

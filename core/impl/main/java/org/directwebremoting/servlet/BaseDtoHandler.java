@@ -3,8 +3,8 @@ package org.directwebremoting.servlet;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.ConverterManager;
 import org.directwebremoting.util.LocalUtil;
 
@@ -15,7 +15,7 @@ import org.directwebremoting.util.LocalUtil;
 public abstract class BaseDtoHandler extends GeneratedJavaScriptHandler
 {
     /* (non-Javadoc)
-     * @see org.directwebremoting.servlet.TemplateHandler#generateTemplate(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see org.directwebremoting.servlet.TemplateHandler#generateTemplate(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)
      */
     @Override
     protected String generateTemplate(String contextPath, String servletPath, String pathInfo) throws IOException
@@ -124,5 +124,5 @@ public abstract class BaseDtoHandler extends GeneratedJavaScriptHandler
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(BaseDtoHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(BaseDtoHandler.class);
 }

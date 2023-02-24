@@ -2,8 +2,8 @@ package org.directwebremoting.jsonrpc;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Container;
 import org.directwebremoting.create.NewCreator;
 import org.directwebremoting.extend.CreatorManager;
@@ -26,7 +26,7 @@ public class JsonRpcCallHandlerTest
     }
 
     /**
-     * Test method for {@link org.directwebremoting.jsonrpc.JsonRpcCallHandler#handle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)}.
+     * Test method for {@link org.directwebremoting.jsonrpc.JsonRpcCallHandler#handle(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)}.
      */
     @Test
     public void testHandle() throws Exception
@@ -57,5 +57,5 @@ public class JsonRpcCallHandlerTest
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(JsonRpcCallHandlerTest.class);
+    private static final Logger log = LoggerFactory.getLogger(JsonRpcCallHandlerTest.class);
 }

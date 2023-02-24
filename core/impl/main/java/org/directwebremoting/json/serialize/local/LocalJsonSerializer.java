@@ -3,8 +3,8 @@ package org.directwebremoting.json.serialize.local;
 import java.io.IOException;
 import java.io.Writer;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.ScriptBuffer;
 import org.directwebremoting.extend.ConverterManager;
@@ -66,5 +66,5 @@ public class LocalJsonSerializer implements JsonSerializer
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(LocalJsonSerializer.class);
+    private static final Logger log = LoggerFactory.getLogger(LocalJsonSerializer.class);
 }

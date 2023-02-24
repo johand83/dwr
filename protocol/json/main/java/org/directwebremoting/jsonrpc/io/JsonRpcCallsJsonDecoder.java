@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.Call;
 import org.directwebremoting.extend.ConverterManager;
 import org.directwebremoting.extend.MethodDeclaration;
@@ -17,7 +17,7 @@ import org.directwebremoting.json.parse.JsonParseException;
 import org.directwebremoting.json.parse.impl.StatefulJsonDecoder;
 import org.directwebremoting.util.JavascriptUtil;
 
-import static javax.servlet.http.HttpServletResponse.*;
+import static jakarta.servlet.http.HttpServletResponse.*;
 
 import static org.directwebremoting.jsonrpc.JsonRpcConstants.*;
 
@@ -274,5 +274,5 @@ public class JsonRpcCallsJsonDecoder extends StatefulJsonDecoder
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(JsonRpcCallsJsonDecoder.class);
+    private static final Logger log = LoggerFactory.getLogger(JsonRpcCallsJsonDecoder.class);
 }

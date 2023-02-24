@@ -3,10 +3,10 @@ package org.directwebremoting.impl;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.ScriptBuffer;
 import org.directwebremoting.extend.ConverterManager;
@@ -257,5 +257,5 @@ public abstract class BaseSleeper implements Sleeper
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(BaseSleeper.class);
+    private static final Logger log = LoggerFactory.getLogger(BaseSleeper.class);
 }

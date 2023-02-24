@@ -11,8 +11,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.AccessControl;
 import org.directwebremoting.extend.ConverterManager;
 import org.directwebremoting.extend.DebugPageGenerator;
@@ -492,5 +492,5 @@ public class DefaultDebugPageGenerator implements DebugPageGenerator
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DefaultDebugPageGenerator.class);
+    private static final Logger log = LoggerFactory.getLogger(DefaultDebugPageGenerator.class);
 }

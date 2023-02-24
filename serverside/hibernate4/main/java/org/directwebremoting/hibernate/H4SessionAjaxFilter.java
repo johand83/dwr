@@ -2,10 +2,10 @@ package org.directwebremoting.hibernate;
 
 import java.lang.reflect.Method;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
-import org.apache.commons.logging.LogFactory;
-import org.apache.commons.logging.Log;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.directwebremoting.AjaxFilter;
 import org.directwebremoting.AjaxFilterChain;
 import org.directwebremoting.WebContextFactory;
@@ -83,7 +83,7 @@ public class H4SessionAjaxFilter implements AjaxFilter
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(H4SessionAjaxFilter.class);
+    private static final Logger log = LoggerFactory.getLogger(H4SessionAjaxFilter.class);
 
     /**
      * Under what name do we store the session factory?

@@ -15,8 +15,8 @@ import javax.jms.TemporaryTopic;
 import javax.jms.Topic;
 import javax.jms.TopicSubscriber;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An implementation of {@link Session} for DWR
@@ -321,5 +321,5 @@ public class DwrSession implements Session
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DwrSession.class);
+    private static final Logger log = LoggerFactory.getLogger(DwrSession.class);
 }

@@ -10,8 +10,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Container;
 import org.directwebremoting.extend.DownloadManager;
 import org.directwebremoting.extend.InitializingBean;
@@ -250,5 +250,5 @@ public class FileStoreDownloadManager extends PurgingDownloadManager implements 
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(FileStoreDownloadManager.class);
+    private static final Logger log = LoggerFactory.getLogger(FileStoreDownloadManager.class);
 }

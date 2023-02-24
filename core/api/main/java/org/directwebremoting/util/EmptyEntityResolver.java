@@ -3,8 +3,8 @@ package org.directwebremoting.util;
 import java.io.IOException;
 import java.io.StringReader;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -36,5 +36,5 @@ public class EmptyEntityResolver implements EntityResolver
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(EmptyEntityResolver.class);
+    private static final Logger log = LoggerFactory.getLogger(EmptyEntityResolver.class);
 }

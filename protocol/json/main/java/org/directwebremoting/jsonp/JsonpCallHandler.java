@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.ScriptBuffer;
 import org.directwebremoting.extend.AccessControl;
@@ -36,7 +36,7 @@ import org.directwebremoting.util.MimeConstants;
 public class JsonpCallHandler implements Handler
 {
     /* (non-Javadoc)
-     * @see org.directwebremoting.Handler#handle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see org.directwebremoting.Handler#handle(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)
      */
     public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException
     {
@@ -322,5 +322,5 @@ public class JsonpCallHandler implements Handler
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(JsonpCallHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(JsonpCallHandler.class);
 }

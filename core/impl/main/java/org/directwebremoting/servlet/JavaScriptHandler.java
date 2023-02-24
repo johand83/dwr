@@ -3,8 +3,8 @@ package org.directwebremoting.servlet;
 import java.io.IOException;
 
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.Compressor;
 import org.directwebremoting.util.MimeConstants;
 
@@ -23,7 +23,7 @@ public abstract class JavaScriptHandler extends TemplateHandler
     }
 
     /* (non-Javadoc)
-     * @see org.directwebremoting.servlet.CachingHandler#generate(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see org.directwebremoting.servlet.CachingHandler#generate(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)
      */
     @Override
     public String generateCachableContent(String contextPath, String servletPath, String pathInfo) throws IOException
@@ -76,5 +76,5 @@ public abstract class JavaScriptHandler extends TemplateHandler
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(JavaScriptHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(JavaScriptHandler.class);
 }

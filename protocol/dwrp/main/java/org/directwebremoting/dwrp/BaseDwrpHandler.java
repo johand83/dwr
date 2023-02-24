@@ -1,11 +1,11 @@
 package org.directwebremoting.dwrp;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.export.System;
 import org.directwebremoting.extend.Handler;
 
@@ -221,5 +221,5 @@ public abstract class BaseDwrpHandler implements Handler
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(BaseDwrpHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(BaseDwrpHandler.class);
 }

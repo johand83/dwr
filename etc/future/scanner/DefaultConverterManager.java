@@ -8,8 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.ConversionException;
 import org.directwebremoting.extend.Converter;
 import org.directwebremoting.extend.ConverterManager;
@@ -520,5 +520,5 @@ public class DefaultConverterManager implements ConverterManager
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DefaultConverterManager.class);
+    private static final Logger log = LoggerFactory.getLogger(DefaultConverterManager.class);
 }

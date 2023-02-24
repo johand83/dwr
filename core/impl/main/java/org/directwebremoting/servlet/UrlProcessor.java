@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Container;
 import org.directwebremoting.extend.Handler;
 import org.directwebremoting.extend.InitializingBean;
@@ -133,7 +133,7 @@ public class UrlProcessor implements Handler, InitializingBean
     }
 
     /* (non-Javadoc)
-     * @see org.directwebremoting.Handler#handle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see org.directwebremoting.Handler#handle(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)
      */
     public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException
     {
@@ -284,5 +284,5 @@ public class UrlProcessor implements Handler, InitializingBean
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(UrlProcessor.class);
+    private static final Logger log = LoggerFactory.getLogger(UrlProcessor.class);
 }

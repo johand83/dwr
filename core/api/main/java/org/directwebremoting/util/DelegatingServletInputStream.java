@@ -3,7 +3,8 @@ package org.directwebremoting.util;
 import java.io.IOException;
 import java.io.InputStream;
 
-import javax.servlet.ServletInputStream;
+import jakarta.servlet.ReadListener;
+import jakarta.servlet.ServletInputStream;
 
 /**
  * Delegating implementation of ServletInputStream.
@@ -57,4 +58,22 @@ public class DelegatingServletInputStream extends ServletInputStream
     }
 
     private final InputStream proxy;
+
+    @Override
+    public boolean isFinished()
+    {
+        return false;
+    }
+
+    @Override
+    public boolean isReady()
+    {
+        return false;
+    }
+
+    @Override
+    public void setReadListener(ReadListener readListener)
+    {
+
+    }
 }

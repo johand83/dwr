@@ -3,10 +3,10 @@ package org.directwebremoting.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.ServletContextListener;
+import jakarta.servlet.ServletContextListener;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.extend.ServerLoadMonitor;
 import org.directwebremoting.extend.UninitializingBean;
 import org.directwebremoting.extend.WaitController;
@@ -94,5 +94,5 @@ public abstract class AbstractServerLoadMonitor implements ServerLoadMonitor, Un
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(AbstractServerLoadMonitor.class);
+    private static final Logger log = LoggerFactory.getLogger(AbstractServerLoadMonitor.class);
 }

@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
 
 import org.directwebremoting.Container;
 import org.directwebremoting.WebContextFactory.WebContextBuilder;
@@ -38,7 +38,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 public class DwrSpringServlet extends DwrServlet
 {
     /* (non-Javadoc)
-     * @see org.directwebremoting.servlet.DwrServlet#createContainer(javax.servlet.ServletConfig)
+     * @see org.directwebremoting.servlet.DwrServlet#createContainer(jakarta.servlet.ServletConfig)
      */
     @Override
     protected SpringContainer createContainer(ServletConfig servletConfig)
@@ -52,7 +52,7 @@ public class DwrSpringServlet extends DwrServlet
     }
 
     /* (non-Javadoc)
-     * @see org.directwebremoting.servlet.DwrServlet#configureContainer(org.directwebremoting.Container, javax.servlet.ServletConfig)
+     * @see org.directwebremoting.servlet.DwrServlet#configureContainer(org.directwebremoting.Container, jakarta.servlet.ServletConfig)
      */
     @Override
     protected void configureContainer(Container container, ServletConfig servletConfig) throws ServletException, IOException

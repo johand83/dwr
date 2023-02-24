@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Call is a POJO to encapsulate the information required to make a single java
@@ -212,5 +212,5 @@ public class Call
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(Call.class);
+    private static final Logger log = LoggerFactory.getLogger(Call.class);
 }

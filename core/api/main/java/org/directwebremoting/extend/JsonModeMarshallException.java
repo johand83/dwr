@@ -1,7 +1,7 @@
 package org.directwebremoting.extend;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * JsonModeMarshallException is a hint to the conversion process that
@@ -66,5 +66,5 @@ public class JsonModeMarshallException extends RuntimeException
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(JsonModeMarshallException.class);
+    private static final Logger log = LoggerFactory.getLogger(JsonModeMarshallException.class);
 }

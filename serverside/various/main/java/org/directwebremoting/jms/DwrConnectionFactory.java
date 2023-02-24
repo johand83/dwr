@@ -3,8 +3,8 @@ package org.directwebremoting.jms;
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An implementation of {@link ConnectionFactory} for DWR
@@ -32,5 +32,5 @@ public class DwrConnectionFactory implements ConnectionFactory
 	/**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DwrConnectionFactory.class);
+    private static final Logger log = LoggerFactory.getLogger(DwrConnectionFactory.class);
 }

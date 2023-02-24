@@ -3,8 +3,9 @@ package org.directwebremoting.datasync;
 import java.util.Comparator;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.directwebremoting.io.SortCriterion;
 import org.directwebremoting.util.LocalUtil;
 
@@ -97,5 +98,5 @@ public class SortCriteriaComparator<T> implements Comparator<T>
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(SortCriteriaComparator.class);
+    private static final Logger log = LoggerFactory.getLogger(SortCriteriaComparator.class);
 }

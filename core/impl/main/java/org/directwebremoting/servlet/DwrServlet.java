@@ -2,14 +2,14 @@ package org.directwebremoting.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Container;
 import org.directwebremoting.WebContextFactory.WebContextBuilder;
 import org.directwebremoting.impl.StartupUtil;
@@ -35,7 +35,7 @@ import org.directwebremoting.impl.StartupUtil;
 public class DwrServlet extends HttpServlet
 {
     /* (non-Javadoc)
-     * @see javax.servlet.GenericServlet#init(javax.servlet.ServletConfig)
+     * @see jakarta.servlet.GenericServlet#init(jakarta.servlet.ServletConfig)
      */
     @Override
     public void init(ServletConfig servletConfig) throws ServletException
@@ -108,7 +108,7 @@ public class DwrServlet extends HttpServlet
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see jakarta.servlet.http.HttpServlet#doGet(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)
      */
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
@@ -117,7 +117,7 @@ public class DwrServlet extends HttpServlet
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see jakarta.servlet.http.HttpServlet#doPost(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)
      */
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
@@ -135,7 +135,7 @@ public class DwrServlet extends HttpServlet
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.GenericServlet#destroy()
+     * @see jakarta.servlet.GenericServlet#destroy()
      */
     @Override
     public void destroy()
@@ -174,5 +174,5 @@ public class DwrServlet extends HttpServlet
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(DwrServlet.class);
+    private static final Logger log = LoggerFactory.getLogger(DwrServlet.class);
 }

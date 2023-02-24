@@ -1,7 +1,7 @@
 package org.directwebremoting.hibernate;
 
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
 
 /**
  * Setup an in-process HSQLDB instance
@@ -10,14 +10,14 @@ import javax.servlet.ServletContextListener;
 public class DatabaseInitServletContextListener implements ServletContextListener
 {
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContextListener#contextInitialized(javax.servlet.ServletContextEvent)
+     * @see jakarta.servlet.ServletContextListener#contextInitialized(jakarta.servlet.ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent ev)
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContextListener#contextDestroyed(javax.servlet.ServletContextEvent)
+     * @see jakarta.servlet.ServletContextListener#contextDestroyed(jakarta.servlet.ServletContextEvent)
      */
     public void contextDestroyed(ServletContextEvent ev)
     {

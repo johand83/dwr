@@ -3,12 +3,12 @@ package org.directwebremoting.guice;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.inject.Injector;
 
@@ -25,7 +25,7 @@ import static org.directwebremoting.guice.util.ContextCloseHandlers.*;
 public abstract class AbstractDwrGuiceServletContextListener extends AbstractDwrModule implements ServletContextListener
 {
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContextListener#contextInitialized(javax.servlet.ServletContextEvent)
+     * @see jakarta.servlet.ServletContextListener#contextInitialized(jakarta.servlet.ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent servletContextEvent)
     {
@@ -40,7 +40,7 @@ public abstract class AbstractDwrGuiceServletContextListener extends AbstractDwr
     }
 
     /* (non-Javadoc)
-     * @see javax.servlet.ServletContextListener#contextDestroyed(javax.servlet.ServletContextEvent)
+     * @see jakarta.servlet.ServletContextListener#contextDestroyed(jakarta.servlet.ServletContextEvent)
      */
     public void contextDestroyed(ServletContextEvent servletContextEvent)
     {
@@ -114,5 +114,5 @@ public abstract class AbstractDwrGuiceServletContextListener extends AbstractDwr
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(AbstractDwrGuiceServletContextListener.class);
+    private static final Logger log = LoggerFactory.getLogger(AbstractDwrGuiceServletContextListener.class);
 }

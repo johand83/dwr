@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 import javax.swing.event.EventListenerList;
 
 import org.directwebremoting.ScriptSession;

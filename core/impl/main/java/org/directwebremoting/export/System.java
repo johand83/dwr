@@ -3,11 +3,11 @@ package org.directwebremoting.export;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.directwebremoting.Hub;
 import org.directwebremoting.HubFactory;
 import org.directwebremoting.ScriptBuffer;
@@ -202,5 +202,5 @@ public class System
     /**
      * The log stream
      */
-    private static final Log log = LogFactory.getLog(System.class);
+    private static final Logger log = LoggerFactory.getLogger(System.class);
 }
