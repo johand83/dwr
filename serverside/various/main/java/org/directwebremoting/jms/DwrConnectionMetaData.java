@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Enumeration;
 
-import javax.jms.ConnectionMetaData;
-import javax.jms.JMSException;
+import jakarta.jms.ConnectionMetaData;
+import jakarta.jms.JMSException;
 
 import org.directwebremoting.util.VersionUtil;
 
@@ -17,7 +17,7 @@ import org.directwebremoting.util.VersionUtil;
 public class DwrConnectionMetaData implements ConnectionMetaData
 {
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getJMSMajorVersion()
+	 * @see jakarta.jms.ConnectionMetaData#getJMSMajorVersion()
 	 */
 	public int getJMSMajorVersion() throws JMSException
 	{
@@ -25,7 +25,7 @@ public class DwrConnectionMetaData implements ConnectionMetaData
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getJMSMinorVersion()
+	 * @see jakarta.jms.ConnectionMetaData#getJMSMinorVersion()
 	 */
 	public int getJMSMinorVersion() throws JMSException
 	{
@@ -33,7 +33,7 @@ public class DwrConnectionMetaData implements ConnectionMetaData
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getJMSProviderName()
+	 * @see jakarta.jms.ConnectionMetaData#getJMSProviderName()
 	 */
 	public String getJMSProviderName() throws JMSException
 	{
@@ -41,7 +41,7 @@ public class DwrConnectionMetaData implements ConnectionMetaData
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getJMSVersion()
+	 * @see jakarta.jms.ConnectionMetaData#getJMSVersion()
 	 */
 	public String getJMSVersion() throws JMSException
 	{
@@ -49,7 +49,7 @@ public class DwrConnectionMetaData implements ConnectionMetaData
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getJMSXPropertyNames()
+	 * @see jakarta.jms.ConnectionMetaData#getJMSXPropertyNames()
 	 */
 	public Enumeration<String> getJMSXPropertyNames() throws JMSException
 	{
@@ -57,7 +57,7 @@ public class DwrConnectionMetaData implements ConnectionMetaData
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getProviderMajorVersion()
+	 * @see jakarta.jms.ConnectionMetaData#getProviderMajorVersion()
 	 */
 	public int getProviderMajorVersion() throws JMSException
 	{
@@ -67,7 +67,7 @@ public class DwrConnectionMetaData implements ConnectionMetaData
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getProviderMinorVersion()
+	 * @see jakarta.jms.ConnectionMetaData#getProviderMinorVersion()
 	 */
 	public int getProviderMinorVersion() throws JMSException
 	{
@@ -77,7 +77,7 @@ public class DwrConnectionMetaData implements ConnectionMetaData
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionMetaData#getProviderVersion()
+	 * @see jakarta.jms.ConnectionMetaData#getProviderVersion()
 	 */
 	public String getProviderVersion() throws JMSException
 	{

@@ -14,6 +14,8 @@ import org.directwebremoting.extend.CreatorManager;
 import org.directwebremoting.servlet.DwrServlet;
 import org.directwebremoting.util.FakeServletConfig;
 import org.directwebremoting.util.LocalUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;
@@ -186,7 +188,6 @@ public class DwrGuiceServlet extends DwrServlet
     /**
      * The log stream
      */
-    private static final org.apache.commons.logging.Log log =
-                         org.apache.commons.logging.LogFactory.getLog
+    private static final Logger log = LoggerFactory.getLogger
                          (DwrGuiceServlet.class);
 }

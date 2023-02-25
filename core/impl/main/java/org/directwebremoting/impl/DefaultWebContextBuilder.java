@@ -47,7 +47,7 @@ public class DefaultWebContextBuilder implements WebContextBuilder
         }
         catch (Exception ex)
         {
-            log.fatal("Failed to create an ExecutionContext", ex);
+            log.error("Failed to create an ExecutionContext", ex);
         }
     }
 

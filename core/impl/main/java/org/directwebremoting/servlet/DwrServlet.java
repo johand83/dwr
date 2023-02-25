@@ -62,7 +62,7 @@ public class DwrServlet extends HttpServlet
         }
         catch (Exception ex)
         {
-            log.fatal("init failed", ex);
+            log.error("init failed", ex);
             throw new ServletException(ex);
         }
         finally

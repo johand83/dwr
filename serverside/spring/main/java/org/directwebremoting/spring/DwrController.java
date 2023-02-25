@@ -186,7 +186,7 @@ public class DwrController extends AbstractController implements BeanNameAware, 
         }
         catch (Exception ex)
         {
-            log.fatal("init failed", ex);
+            log.error("init failed", ex);
             throw ex;
         }
         finally

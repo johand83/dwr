@@ -1,13 +1,13 @@
 package org.directwebremoting.jms;
 
-import javax.jms.Connection;
-import javax.jms.ConnectionConsumer;
-import javax.jms.Destination;
-import javax.jms.ExceptionListener;
-import javax.jms.JMSException;
-import javax.jms.ServerSessionPool;
-import javax.jms.Session;
-import javax.jms.Topic;
+import jakarta.jms.Connection;
+import jakarta.jms.ConnectionConsumer;
+import jakarta.jms.Destination;
+import jakarta.jms.ExceptionListener;
+import jakarta.jms.JMSException;
+import jakarta.jms.ServerSessionPool;
+import jakarta.jms.Session;
+import jakarta.jms.Topic;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +20,7 @@ import org.directwebremoting.ServerContext;
 public class DwrConnection implements Connection
 {
     /* (non-Javadoc)
-     * @see javax.jms.Connection#createSession(boolean, int)
+     * @see jakarta.jms.Connection#createSession(boolean, int)
      */
     public DwrSession createSession(boolean transacted, int acknowledgeMode) throws JMSException
     {
@@ -37,24 +37,48 @@ public class DwrConnection implements Connection
         return new DwrSession(this, transacted, acknowledgeMode);
     }
 
+    @Override
+    public Session createSession(int i) throws JMSException
+    {
+        return null;
+    }
+
+    @Override
+    public Session createSession() throws JMSException
+    {
+        return null;
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.Connection#createConnectionConsumer(javax.jms.Destination, java.lang.String, javax.jms.ServerSessionPool, int)
+     * @see jakarta.jms.Connection#createConnectionConsumer(jakarta.jms.Destination, java.lang.String, jakarta.jms.ServerSessionPool, int)
      */
     public ConnectionConsumer createConnectionConsumer(Destination destination, String messageSelector, ServerSessionPool sessionPool, int maxMessages) throws JMSException
     {
         throw Unsupported.noConnectionConsumers();
     }
 
+    @Override
+    public ConnectionConsumer createSharedConnectionConsumer(Topic topic, String s, String s1, ServerSessionPool serverSessionPool, int i) throws JMSException
+    {
+        return null;
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.Connection#createDurableConnectionConsumer(javax.jms.Topic, java.lang.String, java.lang.String, javax.jms.ServerSessionPool, int)
+     * @see jakarta.jms.Connection#createDurableConnectionConsumer(jakarta.jms.Topic, java.lang.String, java.lang.String, jakarta.jms.ServerSessionPool, int)
      */
     public ConnectionConsumer createDurableConnectionConsumer(Topic topic, String subscriptionName, String messageSelector, ServerSessionPool sessionPool, int maxMessages) throws JMSException
     {
         throw Unsupported.noConnectionConsumers();
     }
 
+    @Override
+    public ConnectionConsumer createSharedDurableConnectionConsumer(Topic topic, String s, String s1, ServerSessionPool serverSessionPool, int i) throws JMSException
+    {
+        return null;
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.Connection#getMetaData()
+     * @see jakarta.jms.Connection#getMetaData()
      */
     public DwrConnectionMetaData getMetaData() throws JMSException
     {
@@ -62,7 +86,7 @@ public class DwrConnection implements Connection
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Connection#start()
+     * @see jakarta.jms.Connection#start()
      */
     public void start() throws JMSException
     {
@@ -75,7 +99,7 @@ public class DwrConnection implements Connection
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Connection#stop()
+     * @see jakarta.jms.Connection#stop()
      */
     public void stop() throws JMSException
     {
@@ -88,7 +112,7 @@ public class DwrConnection implements Connection
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Connection#close()
+     * @see jakarta.jms.Connection#close()
      */
     public void close() throws JMSException
     {
@@ -96,7 +120,7 @@ public class DwrConnection implements Connection
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Connection#setClientID(java.lang.String)
+     * @see jakarta.jms.Connection#setClientID(java.lang.String)
      */
     public void setClientID(String clientId) throws JMSException
     {
@@ -104,7 +128,7 @@ public class DwrConnection implements Connection
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Connection#getClientID()
+     * @see jakarta.jms.Connection#getClientID()
      */
     public String getClientID() throws JMSException
     {
@@ -112,7 +136,7 @@ public class DwrConnection implements Connection
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Connection#setExceptionListener(javax.jms.ExceptionListener)
+     * @see jakarta.jms.Connection#setExceptionListener(jakarta.jms.ExceptionListener)
      */
     public void setExceptionListener(ExceptionListener listener) throws JMSException
     {
@@ -120,7 +144,7 @@ public class DwrConnection implements Connection
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Connection#getExceptionListener()
+     * @see jakarta.jms.Connection#getExceptionListener()
      */
     public ExceptionListener getExceptionListener() throws JMSException
     {

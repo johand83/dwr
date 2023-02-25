@@ -1,11 +1,11 @@
 package org.directwebremoting.jms;
 
-import javax.jms.Destination;
-import javax.jms.IllegalStateException;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageConsumer;
-import javax.jms.MessageListener;
+import jakarta.jms.Destination;
+import jakarta.jms.IllegalStateException;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.MessageConsumer;
+import jakarta.jms.MessageListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ import org.directwebremoting.event.MessageEvent;
 public class DwrMessageConsumer implements MessageConsumer
 {
     /**
-     * @see javax.jms.Session#createConsumer(Destination)
+     * @see jakarta.jms.Session#createConsumer(Destination)
      */
     public DwrMessageConsumer(DwrConnection connection, Destination destination) throws JMSException
     {
@@ -30,7 +30,7 @@ public class DwrMessageConsumer implements MessageConsumer
 
     /**
      * @throws JMSException
-     * @see javax.jms.Session#createConsumer(Destination, String)
+     * @see jakarta.jms.Session#createConsumer(Destination, String)
      */
     public DwrMessageConsumer(DwrConnection connection, Destination destination, String messageSelector) throws JMSException
     {
@@ -38,7 +38,7 @@ public class DwrMessageConsumer implements MessageConsumer
     }
 
     /**
-     * @see javax.jms.Session#createConsumer(Destination, String, boolean)
+     * @see jakarta.jms.Session#createConsumer(Destination, String, boolean)
      */
     public DwrMessageConsumer(DwrConnection connection, Destination destination, String messageSelector, boolean noLocal) throws JMSException
     {
@@ -85,14 +85,14 @@ public class DwrMessageConsumer implements MessageConsumer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageConsumer#close()
+     * @see jakarta.jms.MessageConsumer#close()
      */
     public void close() throws JMSException
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageConsumer#getMessageListener()
+     * @see jakarta.jms.MessageConsumer#getMessageListener()
      */
     public MessageListener getMessageListener() throws JMSException
     {
@@ -100,7 +100,7 @@ public class DwrMessageConsumer implements MessageConsumer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageConsumer#setMessageListener(javax.jms.MessageListener)
+     * @see jakarta.jms.MessageConsumer#setMessageListener(jakarta.jms.MessageListener)
      */
     public void setMessageListener(MessageListener messageListener) throws JMSException
     {
@@ -121,7 +121,7 @@ public class DwrMessageConsumer implements MessageConsumer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageConsumer#getMessageSelector()
+     * @see jakarta.jms.MessageConsumer#getMessageSelector()
      */
     public String getMessageSelector() throws JMSException
     {
@@ -129,7 +129,7 @@ public class DwrMessageConsumer implements MessageConsumer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageConsumer#receive()
+     * @see jakarta.jms.MessageConsumer#receive()
      */
     public Message receive() throws JMSException
     {
@@ -145,7 +145,7 @@ public class DwrMessageConsumer implements MessageConsumer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageConsumer#receive(long)
+     * @see jakarta.jms.MessageConsumer#receive(long)
      */
     public Message receive(long timeout) throws JMSException
     {
@@ -161,7 +161,7 @@ public class DwrMessageConsumer implements MessageConsumer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageConsumer#receiveNoWait()
+     * @see jakarta.jms.MessageConsumer#receiveNoWait()
      */
     public Message receiveNoWait() throws JMSException
     {

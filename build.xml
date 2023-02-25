@@ -24,7 +24,7 @@
 	<property name="dwr-maven-jar" value="${dist}/lib/${artifactId}-${version}.jar" />
 	<property name="dwr-maven-javadoc-jar" value="${dist}/lib/${artifactId}-${version}-javadoc.jar" />
 	<property name="dwr-maven-sources-jar" value="${dist}/lib/${artifactId}-${version}-sources.jar" />
-	<property name="dwr-maven-jdk14-jar" value="${dist}/lib/${artifactId}-${version}-jdk14.jar" />
+<!--	<property name="dwr-maven-jdk14-jar" value="${dist}/lib/${artifactId}-${version}-jdk14.jar" />-->
 	<!-- End Properties for Maven -->
 
 	<!-- Get build number from Github CI -->
@@ -48,7 +48,7 @@
 	<property name="modules" value="
 		core/api, core/impl, core/legacy,
 		protocol/dwrp, protocol/json,
-		serverside/spring, serverside/guice, serverside/struts, serverside/hibernate, serverside/webwork, serverside/various,
+		serverside/spring, serverside/guice, serverside/hibernate, serverside/various,
 		ui/dwr
 		" />
 
@@ -66,7 +66,7 @@
 	</target>
 
 	<target name="source" description="Create dwr-src.jar">
-		<property name="java-sources" value="core/api, core/impl, core/legacy, protocol/dwrp, protocol/json,serverside/spring, serverside/guice, serverside/struts, serverside/hibernate, serverside/webwork, serverside/various, ui/dwr" />
+		<property name="java-sources" value="core/api, core/impl, core/legacy, protocol/dwrp, protocol/json,serverside/spring, serverside/guice, serverside/hibernate, serverside/various, ui/dwr" />
 		<foreach list="${java-sources}" param="module" trim="true" target="copy-sources" />
 		<jar destfile="${target.root}/dwr-src.jar" compress="true">
 			<fileset dir="${target.root}/sourcetree" />
@@ -127,20 +127,20 @@
 	<!--=======================================================================-->
 	<target name="package" depends="war, updateVersionPropertiesWithBuildNumber" description="Create packaged outputs: dwrdemo.war, dwr-jdk14.jar, and the source .zip">
 		<!-- Run retroweaver if dwr.jar has changed since we last ran it -->
-		<taskdef name="retroweaver" classname="net.sourceforge.retroweaver.ant.RetroWeaverTask">
-			<classpath>
-				<fileset dir="${source.root}/etc/retroweaver" includes="**/*" />
-			</classpath>
-		</taskdef>
-		<if-not-uptodate destfile="${basedir}/${target.root}/dwr-jdk14.jar" sourcedir="${target.root}/classes/main">
-			<action>
-				<!-- retroweaver is borked because it doesn't inherit directories properly
-				so if you call this ant build from another it gets the basedir wrong. so
-				we need to prefix the paths with ${basedir} -->
-				<retroweaver inputjar="${basedir}/${target.root}/dwr.jar" outputjar="${basedir}/${target.root}/dwr-jdk14.jar" target="1.4" />
-			</action>
-		</if-not-uptodate>
-		<copy file="${basedir}/${target.root}/dwr-jdk14.jar" tofile="${dwr-maven-jdk14-jar}" />
+<!--		<taskdef name="retroweaver" classname="net.sourceforge.retroweaver.ant.RetroWeaverTask">-->
+<!--			<classpath>-->
+<!--				<fileset dir="${source.root}/etc/retroweaver" includes="**/*" />-->
+<!--			</classpath>-->
+<!--		</taskdef>-->
+<!--		<if-not-uptodate destfile="${basedir}/${target.root}/dwr-jdk14.jar" sourcedir="${target.root}/classes/main">-->
+<!--			<action>-->
+<!--				&lt;!&ndash; retroweaver is borked because it doesn't inherit directories properly-->
+<!--				so if you call this ant build from another it gets the basedir wrong. so-->
+<!--				we need to prefix the paths with ${basedir} &ndash;&gt;-->
+<!--				<retroweaver inputjar="${basedir}/${target.root}/dwr.jar" outputjar="${basedir}/${target.root}/dwr-jdk14.jar" target="1.4" />-->
+<!--			</action>-->
+<!--		</if-not-uptodate>-->
+<!--		<copy file="${basedir}/${target.root}/dwr-jdk14.jar" tofile="${dwr-maven-jdk14-jar}" />-->
 		<!-- Rezip the demo war file if it's contents have changed -->
 		<if-not-uptodate destfile="${target.root}/dwrdemo.war" sourcedir="${target.root}/web/demo">
 			<action>
@@ -172,9 +172,7 @@
 				<pathelement path="${source.root}/serverside/guice/main/java" />
 				<pathelement path="${source.root}/serverside/hibernate/main/java" />
 				<pathelement path="${source.root}/serverside/spring/main/java" />
-				<pathelement path="${source.root}/serverside/struts/main/java" />
 				<pathelement path="${source.root}/serverside/various/main/java" />
-				<pathelement path="${source.root}/serverside/webwork/main/java" />
 				<pathelement path="${source.root}/ui/dwr/main/java" />
 			</sourcepath>
 			<classpath>

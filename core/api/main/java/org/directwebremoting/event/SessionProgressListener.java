@@ -2,7 +2,7 @@ package org.directwebremoting.event;
 
 import java.io.Serializable;
 
-import org.apache.commons.fileupload.ProgressListener;
+import org.apache.commons.fileupload2.ProgressListener;
 
 /**
  * Progress listener that stores results in the user session.

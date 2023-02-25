@@ -238,5 +238,5 @@ public class XmlBeanConverter extends BeanConverter
     /**
      * The log stream
      */
-    private static Log log = LogFactory.getLog(XmlBeanConverter.class);
+    private static Logger log = LoggerFactory.getLogger(XmlBeanConverter.class);
 }

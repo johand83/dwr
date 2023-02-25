@@ -162,7 +162,7 @@ public class SpringCreator extends AbstractCreator implements Creator
         {
             // Probably on boot time
         }
-        return request != null ? RequestContextUtils.getWebApplicationContext(request, srvCtx) : WebApplicationContextUtils.getWebApplicationContext(srvCtx);
+        return request != null ? RequestContextUtils.findWebApplicationContext(request, srvCtx) : WebApplicationContextUtils.getWebApplicationContext(srvCtx);
     }
 
     /**

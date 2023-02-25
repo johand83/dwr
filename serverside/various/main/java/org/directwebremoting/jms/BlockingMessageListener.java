@@ -1,8 +1,8 @@
 package org.directwebremoting.jms;
 
-import javax.jms.Message;
-import javax.jms.MessageConsumer;
-import javax.jms.MessageListener;
+import jakarta.jms.Message;
+import jakarta.jms.MessageConsumer;
+import jakarta.jms.MessageListener;
 
 /**
  * A {@link MessageListener} especially for {@link DwrMessageConsumer} that
@@ -15,7 +15,7 @@ import javax.jms.MessageListener;
 public class BlockingMessageListener implements MessageListener
 {
     /* (non-Javadoc)
-     * @see javax.jms.MessageListener#onMessage(javax.jms.Message)
+     * @see jakarta.jms.MessageListener#onMessage(jakarta.jms.Message)
      */
     public void onMessage(Message newMessage)
     {

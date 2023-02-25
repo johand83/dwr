@@ -1,7 +1,8 @@
 package org.directwebremoting.jms;
 
-import javax.jms.ConnectionFactory;
-import javax.jms.JMSException;
+import jakarta.jms.ConnectionFactory;
+import jakarta.jms.JMSContext;
+import jakarta.jms.JMSException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +14,7 @@ import org.slf4j.LoggerFactory;
 public class DwrConnectionFactory implements ConnectionFactory
 {
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionFactory#createConnection()
+	 * @see jakarta.jms.ConnectionFactory#createConnection()
 	 */
 	public DwrConnection createConnection() throws JMSException
 	{
@@ -21,12 +22,36 @@ public class DwrConnectionFactory implements ConnectionFactory
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.jms.ConnectionFactory#createConnection(java.lang.String, java.lang.String)
+	 * @see jakarta.jms.ConnectionFactory#createConnection(java.lang.String, java.lang.String)
 	 */
 	public DwrConnection createConnection(String username, String password) throws JMSException
 	{
 	    log.debug("DwrConnectionFactory.createConnection(username, password) is provided for convenience only. No passwords are used by DWR");
 		return new DwrConnection();
+	}
+
+	@Override
+	public JMSContext createContext()
+	{
+		return null;
+	}
+
+	@Override
+	public JMSContext createContext(String s, String s1)
+	{
+		return null;
+	}
+
+	@Override
+	public JMSContext createContext(String s, String s1, int i)
+	{
+		return null;
+	}
+
+	@Override
+	public JMSContext createContext(int i)
+	{
+		return null;
 	}
 
 	/**

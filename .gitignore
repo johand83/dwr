@@ -1,0 +1,6 @@
+*.class
+target
+dist
+*.args
+#Ignore git merge files
+*.orig

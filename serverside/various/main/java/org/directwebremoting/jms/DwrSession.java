@@ -2,18 +2,19 @@ package org.directwebremoting.jms;
 
 import java.io.Serializable;
 
-import javax.jms.BytesMessage;
-import javax.jms.Destination;
-import javax.jms.JMSException;
-import javax.jms.MessageListener;
-import javax.jms.Queue;
-import javax.jms.QueueBrowser;
-import javax.jms.Session;
-import javax.jms.StreamMessage;
-import javax.jms.TemporaryQueue;
-import javax.jms.TemporaryTopic;
-import javax.jms.Topic;
-import javax.jms.TopicSubscriber;
+import jakarta.jms.BytesMessage;
+import jakarta.jms.Destination;
+import jakarta.jms.JMSException;
+import jakarta.jms.MessageConsumer;
+import jakarta.jms.MessageListener;
+import jakarta.jms.Queue;
+import jakarta.jms.QueueBrowser;
+import jakarta.jms.Session;
+import jakarta.jms.StreamMessage;
+import jakarta.jms.TemporaryQueue;
+import jakarta.jms.TemporaryTopic;
+import jakarta.jms.Topic;
+import jakarta.jms.TopicSubscriber;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,7 @@ import org.slf4j.LoggerFactory;
 public class DwrSession implements Session
 {
     /**
-     * @see javax.jms.Connection#createSession(boolean, int)
+     * @see jakarta.jms.Connection#createSession(boolean, int)
      * @param transacted See {@link Session#getTransacted()}
      * @param acknowledgeMode See {@link Session#getAcknowledgeMode()}
      * @param connection 
@@ -48,7 +49,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createMessage()
+     * @see jakarta.jms.Session#createMessage()
      */
     public DwrMessage createMessage() throws JMSException
     {
@@ -56,7 +57,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createMapMessage()
+     * @see jakarta.jms.Session#createMapMessage()
      */
     public DwrMessage createMapMessage() throws JMSException
     {
@@ -64,7 +65,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createTextMessage()
+     * @see jakarta.jms.Session#createTextMessage()
      */
     public DwrMessage createTextMessage() throws JMSException
     {
@@ -72,7 +73,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createTextMessage(java.lang.String)
+     * @see jakarta.jms.Session#createTextMessage(java.lang.String)
      */
     public DwrMessage createTextMessage(String text) throws JMSException
     {
@@ -80,7 +81,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createStreamMessage()
+     * @see jakarta.jms.Session#createStreamMessage()
      */
     public StreamMessage createStreamMessage() throws JMSException
     {
@@ -88,7 +89,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createBytesMessage()
+     * @see jakarta.jms.Session#createBytesMessage()
      */
     public BytesMessage createBytesMessage() throws JMSException
     {
@@ -96,7 +97,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createObjectMessage()
+     * @see jakarta.jms.Session#createObjectMessage()
      */
     public DwrMessage createObjectMessage() throws JMSException
     {
@@ -104,7 +105,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createObjectMessage(java.io.Serializable)
+     * @see jakarta.jms.Session#createObjectMessage(java.io.Serializable)
      */
     public DwrMessage createObjectMessage(Serializable object) throws JMSException
     {
@@ -112,7 +113,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createBrowser(javax.jms.Queue)
+     * @see jakarta.jms.Session#createBrowser(jakarta.jms.Queue)
      */
     public QueueBrowser createBrowser(Queue queue) throws JMSException
     {
@@ -120,7 +121,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createBrowser(javax.jms.Queue, java.lang.String)
+     * @see jakarta.jms.Session#createBrowser(jakarta.jms.Queue, java.lang.String)
      */
     public QueueBrowser createBrowser(Queue queue, String messageSelector) throws JMSException
     {
@@ -128,7 +129,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createConsumer(javax.jms.Destination)
+     * @see jakarta.jms.Session#createConsumer(jakarta.jms.Destination)
      */
     public DwrMessageConsumer createConsumer(Destination destination) throws JMSException
     {
@@ -136,7 +137,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createConsumer(javax.jms.Destination, java.lang.String)
+     * @see jakarta.jms.Session#createConsumer(jakarta.jms.Destination, java.lang.String)
      */
     public DwrMessageConsumer createConsumer(Destination destination, String messageSelector) throws JMSException
     {
@@ -144,15 +145,27 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createConsumer(javax.jms.Destination, java.lang.String, boolean)
+     * @see jakarta.jms.Session#createConsumer(jakarta.jms.Destination, java.lang.String, boolean)
      */
     public DwrMessageConsumer createConsumer(Destination destination, String messageSelector, boolean noLocal) throws JMSException
     {
         return new DwrMessageConsumer(connection, destination, messageSelector, noLocal);
     }
 
+    @Override
+    public MessageConsumer createSharedConsumer(Topic topic, String s) throws JMSException
+    {
+        return null;
+    }
+
+    @Override
+    public MessageConsumer createSharedConsumer(Topic topic, String s, String s1) throws JMSException
+    {
+        return null;
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.Session#createDurableSubscriber(javax.jms.Topic, java.lang.String)
+     * @see jakarta.jms.Session#createDurableSubscriber(jakarta.jms.Topic, java.lang.String)
      */
     public TopicSubscriber createDurableSubscriber(Topic topic, String name) throws JMSException
     {
@@ -160,15 +173,39 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createDurableSubscriber(javax.jms.Topic, java.lang.String, java.lang.String, boolean)
+     * @see jakarta.jms.Session#createDurableSubscriber(jakarta.jms.Topic, java.lang.String, java.lang.String, boolean)
      */
     public TopicSubscriber createDurableSubscriber(Topic topic, String name, String messageSelector, boolean noLocal) throws JMSException
     {
         throw Unsupported.noDurableSubscriptions();
     }
 
+    @Override
+    public MessageConsumer createDurableConsumer(Topic topic, String s) throws JMSException
+    {
+        return null;
+    }
+
+    @Override
+    public MessageConsumer createDurableConsumer(Topic topic, String s, String s1, boolean b) throws JMSException
+    {
+        return null;
+    }
+
+    @Override
+    public MessageConsumer createSharedDurableConsumer(Topic topic, String s) throws JMSException
+    {
+        return null;
+    }
+
+    @Override
+    public MessageConsumer createSharedDurableConsumer(Topic topic, String s, String s1) throws JMSException
+    {
+        return null;
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.Session#createProducer(javax.jms.Destination)
+     * @see jakarta.jms.Session#createProducer(jakarta.jms.Destination)
      */
     public DwrMessageProducer createProducer(Destination destination) throws JMSException
     {
@@ -176,7 +213,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createQueue(java.lang.String)
+     * @see jakarta.jms.Session#createQueue(java.lang.String)
      */
     public Queue createQueue(String queueName) throws JMSException
     {
@@ -184,7 +221,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createTemporaryQueue()
+     * @see jakarta.jms.Session#createTemporaryQueue()
      */
     public TemporaryQueue createTemporaryQueue() throws JMSException
     {
@@ -192,7 +229,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createTopic(java.lang.String)
+     * @see jakarta.jms.Session#createTopic(java.lang.String)
      */
     public DwrTopic createTopic(String topicName) throws JMSException
     {
@@ -200,7 +237,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#createTemporaryTopic()
+     * @see jakarta.jms.Session#createTemporaryTopic()
      */
     public TemporaryTopic createTemporaryTopic() throws JMSException
     {
@@ -208,7 +245,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#getAcknowledgeMode()
+     * @see jakarta.jms.Session#getAcknowledgeMode()
      */
     public int getAcknowledgeMode() throws JMSException
     {
@@ -216,7 +253,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#setMessageListener(javax.jms.MessageListener)
+     * @see jakarta.jms.Session#setMessageListener(jakarta.jms.MessageListener)
      */
     public void setMessageListener(MessageListener messageListener) throws JMSException
     {
@@ -224,7 +261,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#getMessageListener()
+     * @see jakarta.jms.Session#getMessageListener()
      */
     public MessageListener getMessageListener() throws JMSException
     {
@@ -232,7 +269,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#getTransacted()
+     * @see jakarta.jms.Session#getTransacted()
      */
     public boolean getTransacted() throws JMSException
     {
@@ -240,7 +277,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#commit()
+     * @see jakarta.jms.Session#commit()
      */
     public void commit() throws JMSException
     {
@@ -252,7 +289,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#recover()
+     * @see jakarta.jms.Session#recover()
      */
     public void recover() throws JMSException
     {
@@ -260,7 +297,7 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#rollback()
+     * @see jakarta.jms.Session#rollback()
      */
     public void rollback() throws JMSException
     {
@@ -272,21 +309,21 @@ public class DwrSession implements Session
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#run()
+     * @see jakarta.jms.Session#run()
      */
     public void run()
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#close()
+     * @see jakarta.jms.Session#close()
      */
     public void close() throws JMSException
     {
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Session#unsubscribe(java.lang.String)
+     * @see jakarta.jms.Session#unsubscribe(java.lang.String)
      */
     public void unsubscribe(String name) throws JMSException
     {

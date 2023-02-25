@@ -6,12 +6,13 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.jms.DeliveryMode;
-import javax.jms.Destination;
-import javax.jms.MapMessage;
-import javax.jms.Message;
-import javax.jms.ObjectMessage;
-import javax.jms.TextMessage;
+import jakarta.jms.DeliveryMode;
+import jakarta.jms.Destination;
+import jakarta.jms.JMSException;
+import jakarta.jms.MapMessage;
+import jakarta.jms.Message;
+import jakarta.jms.ObjectMessage;
+import jakarta.jms.TextMessage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,7 +59,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#acknowledge()
+     * @see jakarta.jms.Message#acknowledge()
      */
     public void acknowledge()
     {
@@ -66,15 +67,27 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#clearBody()
+     * @see jakarta.jms.Message#clearBody()
      */
     public void clearBody()
     {
         throw new IllegalStateException("Can raw JMS messages have bodies?");
     }
 
+    @Override
+    public <T> T getBody(Class<T> aClass) throws JMSException
+    {
+        return null;
+    }
+
+    @Override
+    public boolean isBodyAssignableTo(Class aClass) throws JMSException
+    {
+        return false;
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.Message#clearProperties()
+     * @see jakarta.jms.Message#clearProperties()
      */
     public void clearProperties()
     {
@@ -82,7 +95,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getPropertyNames()
+     * @see jakarta.jms.Message#getPropertyNames()
      */
     public Enumeration<String> getPropertyNames()
     {
@@ -90,7 +103,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#propertyExists(java.lang.String)
+     * @see jakarta.jms.Message#propertyExists(java.lang.String)
      */
     public boolean propertyExists(String name)
     {
@@ -98,7 +111,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getBooleanProperty(java.lang.String)
+     * @see jakarta.jms.Message#getBooleanProperty(java.lang.String)
      */
     public boolean getBooleanProperty(String name)
     {
@@ -106,7 +119,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getByteProperty(java.lang.String)
+     * @see jakarta.jms.Message#getByteProperty(java.lang.String)
      */
     public byte getByteProperty(String name)
     {
@@ -114,7 +127,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getDoubleProperty(java.lang.String)
+     * @see jakarta.jms.Message#getDoubleProperty(java.lang.String)
      */
     public double getDoubleProperty(String name)
     {
@@ -122,7 +135,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getFloatProperty(java.lang.String)
+     * @see jakarta.jms.Message#getFloatProperty(java.lang.String)
      */
     public float getFloatProperty(String name)
     {
@@ -130,7 +143,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getIntProperty(java.lang.String)
+     * @see jakarta.jms.Message#getIntProperty(java.lang.String)
      */
     public int getIntProperty(String name)
     {
@@ -138,7 +151,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getLongProperty(java.lang.String)
+     * @see jakarta.jms.Message#getLongProperty(java.lang.String)
      */
     public long getLongProperty(String name)
     {
@@ -146,7 +159,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getObjectProperty(java.lang.String)
+     * @see jakarta.jms.Message#getObjectProperty(java.lang.String)
      */
     public Object getObjectProperty(String name)
     {
@@ -154,7 +167,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getShortProperty(java.lang.String)
+     * @see jakarta.jms.Message#getShortProperty(java.lang.String)
      */
     public short getShortProperty(String name)
     {
@@ -162,7 +175,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getStringProperty(java.lang.String)
+     * @see jakarta.jms.Message#getStringProperty(java.lang.String)
      */
     public String getStringProperty(String name)
     {
@@ -170,7 +183,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setBooleanProperty(java.lang.String, boolean)
+     * @see jakarta.jms.Message#setBooleanProperty(java.lang.String, boolean)
      */
     public void setBooleanProperty(String name, boolean value)
     {
@@ -178,7 +191,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setByteProperty(java.lang.String, byte)
+     * @see jakarta.jms.Message#setByteProperty(java.lang.String, byte)
      */
     public void setByteProperty(String name, byte value)
     {
@@ -186,7 +199,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setDoubleProperty(java.lang.String, double)
+     * @see jakarta.jms.Message#setDoubleProperty(java.lang.String, double)
      */
     public void setDoubleProperty(String name, double value)
     {
@@ -194,7 +207,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setFloatProperty(java.lang.String, float)
+     * @see jakarta.jms.Message#setFloatProperty(java.lang.String, float)
      */
     public void setFloatProperty(String name, float value)
     {
@@ -202,7 +215,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setIntProperty(java.lang.String, int)
+     * @see jakarta.jms.Message#setIntProperty(java.lang.String, int)
      */
     public void setIntProperty(String name, int value)
     {
@@ -210,7 +223,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setLongProperty(java.lang.String, long)
+     * @see jakarta.jms.Message#setLongProperty(java.lang.String, long)
      */
     public void setLongProperty(String name, long value)
     {
@@ -218,7 +231,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setObjectProperty(java.lang.String, java.lang.Object)
+     * @see jakarta.jms.Message#setObjectProperty(java.lang.String, java.lang.Object)
      */
     public void setObjectProperty(String name, Object value)
     {
@@ -226,7 +239,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setShortProperty(java.lang.String, short)
+     * @see jakarta.jms.Message#setShortProperty(java.lang.String, short)
      */
     public void setShortProperty(String name, short value)
     {
@@ -234,7 +247,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setStringProperty(java.lang.String, java.lang.String)
+     * @see jakarta.jms.Message#setStringProperty(java.lang.String, java.lang.String)
      */
     public void setStringProperty(String name, String value)
     {
@@ -242,7 +255,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSCorrelationID()
+     * @see jakarta.jms.Message#getJMSCorrelationID()
      */
     public String getJMSCorrelationID()
     {
@@ -250,7 +263,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSCorrelationIDAsBytes()
+     * @see jakarta.jms.Message#getJMSCorrelationIDAsBytes()
      */
     public byte[] getJMSCorrelationIDAsBytes()
     {
@@ -258,7 +271,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSDeliveryMode()
+     * @see jakarta.jms.Message#getJMSDeliveryMode()
      */
     public int getJMSDeliveryMode()
     {
@@ -266,7 +279,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSDestination()
+     * @see jakarta.jms.Message#getJMSDestination()
      */
     public Destination getJMSDestination()
     {
@@ -274,7 +287,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSExpiration()
+     * @see jakarta.jms.Message#getJMSExpiration()
      */
     public long getJMSExpiration()
     {
@@ -282,7 +295,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSMessageID()
+     * @see jakarta.jms.Message#getJMSMessageID()
      */
     public String getJMSMessageID()
     {
@@ -290,7 +303,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSPriority()
+     * @see jakarta.jms.Message#getJMSPriority()
      */
     public int getJMSPriority()
     {
@@ -298,7 +311,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSRedelivered()
+     * @see jakarta.jms.Message#getJMSRedelivered()
      */
     public boolean getJMSRedelivered()
     {
@@ -306,7 +319,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSReplyTo()
+     * @see jakarta.jms.Message#getJMSReplyTo()
      */
     public Destination getJMSReplyTo()
     {
@@ -314,7 +327,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSTimestamp()
+     * @see jakarta.jms.Message#getJMSTimestamp()
      */
     public long getJMSTimestamp()
     {
@@ -322,7 +335,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#getJMSType()
+     * @see jakarta.jms.Message#getJMSType()
      */
     public String getJMSType()
     {
@@ -330,7 +343,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSCorrelationID(java.lang.String)
+     * @see jakarta.jms.Message#setJMSCorrelationID(java.lang.String)
      */
     public void setJMSCorrelationID(String correlationID)
     {
@@ -338,7 +351,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSCorrelationIDAsBytes(byte[])
+     * @see jakarta.jms.Message#setJMSCorrelationIDAsBytes(byte[])
      */
     public void setJMSCorrelationIDAsBytes(byte[] correlationID)
     {
@@ -346,7 +359,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSDeliveryMode(int)
+     * @see jakarta.jms.Message#setJMSDeliveryMode(int)
      */
     public void setJMSDeliveryMode(int deliveryMode)
     {
@@ -355,7 +368,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSDestination(javax.jms.Destination)
+     * @see jakarta.jms.Message#setJMSDestination(jakarta.jms.Destination)
      */
     public void setJMSDestination(Destination destination)
     {
@@ -363,7 +376,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSExpiration(long)
+     * @see jakarta.jms.Message#setJMSExpiration(long)
      */
     public void setJMSExpiration(long expiration)
     {
@@ -371,8 +384,20 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
         throw Unsupported.noMessageExpiry();
     }
 
+    @Override
+    public long getJMSDeliveryTime() throws JMSException
+    {
+        return 0;
+    }
+
+    @Override
+    public void setJMSDeliveryTime(long l) throws JMSException
+    {
+
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSMessageID(java.lang.String)
+     * @see jakarta.jms.Message#setJMSMessageID(java.lang.String)
      */
     public void setJMSMessageID(String messageId)
     {
@@ -380,7 +405,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSPriority(int)
+     * @see jakarta.jms.Message#setJMSPriority(int)
      */
     public void setJMSPriority(int priority)
     {
@@ -389,7 +414,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSRedelivered(boolean)
+     * @see jakarta.jms.Message#setJMSRedelivered(boolean)
      */
     public void setJMSRedelivered(boolean redelivered)
     {
@@ -398,7 +423,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSReplyTo(javax.jms.Destination)
+     * @see jakarta.jms.Message#setJMSReplyTo(jakarta.jms.Destination)
      */
     public void setJMSReplyTo(Destination replyTo)
     {
@@ -407,7 +432,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSTimestamp(long)
+     * @see jakarta.jms.Message#setJMSTimestamp(long)
      */
     public void setJMSTimestamp(long timestamp)
     {
@@ -415,7 +440,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.Message#setJMSType(java.lang.String)
+     * @see jakarta.jms.Message#setJMSType(java.lang.String)
      */
     public void setJMSType(String type)
     {
@@ -480,7 +505,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     // The methods from MapMessage 
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getMapNames()
+     * @see jakarta.jms.MapMessage#getMapNames()
      */
     public Enumeration<String> getMapNames()
     {
@@ -488,7 +513,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#itemExists(java.lang.String)
+     * @see jakarta.jms.MapMessage#itemExists(java.lang.String)
      */
     public boolean itemExists(String name)
     {
@@ -496,7 +521,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getBoolean(java.lang.String)
+     * @see jakarta.jms.MapMessage#getBoolean(java.lang.String)
      */
     public boolean getBoolean(String name)
     {
@@ -504,7 +529,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getByte(java.lang.String)
+     * @see jakarta.jms.MapMessage#getByte(java.lang.String)
      */
     public byte getByte(String name)
     {
@@ -512,7 +537,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getBytes(java.lang.String)
+     * @see jakarta.jms.MapMessage#getBytes(java.lang.String)
      */
     public byte[] getBytes(String name)
     {
@@ -520,7 +545,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getChar(java.lang.String)
+     * @see jakarta.jms.MapMessage#getChar(java.lang.String)
      */
     public char getChar(String name)
     {
@@ -528,7 +553,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getDouble(java.lang.String)
+     * @see jakarta.jms.MapMessage#getDouble(java.lang.String)
      */
     public double getDouble(String name)
     {
@@ -536,7 +561,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getFloat(java.lang.String)
+     * @see jakarta.jms.MapMessage#getFloat(java.lang.String)
      */
     public float getFloat(String name)
     {
@@ -544,7 +569,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getInt(java.lang.String)
+     * @see jakarta.jms.MapMessage#getInt(java.lang.String)
      */
     public int getInt(String name)
     {
@@ -552,7 +577,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getLong(java.lang.String)
+     * @see jakarta.jms.MapMessage#getLong(java.lang.String)
      */
     public long getLong(String name)
     {
@@ -560,7 +585,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getShort(java.lang.String)
+     * @see jakarta.jms.MapMessage#getShort(java.lang.String)
      */
     public short getShort(String name)
     {
@@ -568,7 +593,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getString(java.lang.String)
+     * @see jakarta.jms.MapMessage#getString(java.lang.String)
      */
     public String getString(String name)
     {
@@ -576,7 +601,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#getObject(java.lang.String)
+     * @see jakarta.jms.MapMessage#getObject(java.lang.String)
      */
     @SuppressWarnings("unchecked")
     public Object getObject(String name)
@@ -604,7 +629,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setBoolean(java.lang.String, boolean)
+     * @see jakarta.jms.MapMessage#setBoolean(java.lang.String, boolean)
      */
     public void setBoolean(String name, boolean value)
     {
@@ -613,7 +638,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setByte(java.lang.String, byte)
+     * @see jakarta.jms.MapMessage#setByte(java.lang.String, byte)
      */
     public void setByte(String name, byte value)
     {
@@ -622,7 +647,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setBytes(java.lang.String, byte[])
+     * @see jakarta.jms.MapMessage#setBytes(java.lang.String, byte[])
      */
     public void setBytes(String name, byte[] value)
     {
@@ -631,7 +656,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setBytes(java.lang.String, byte[], int, int)
+     * @see jakarta.jms.MapMessage#setBytes(java.lang.String, byte[], int, int)
      */
     public void setBytes(String name, byte[] value, int offset, int length)
     {
@@ -642,7 +667,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setChar(java.lang.String, char)
+     * @see jakarta.jms.MapMessage#setChar(java.lang.String, char)
      */
     public void setChar(String name, char value)
     {
@@ -651,7 +676,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setDouble(java.lang.String, double)
+     * @see jakarta.jms.MapMessage#setDouble(java.lang.String, double)
      */
     public void setDouble(String name, double value)
     {
@@ -660,7 +685,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setFloat(java.lang.String, float)
+     * @see jakarta.jms.MapMessage#setFloat(java.lang.String, float)
      */
     public void setFloat(String name, float value)
     {
@@ -669,7 +694,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setInt(java.lang.String, int)
+     * @see jakarta.jms.MapMessage#setInt(java.lang.String, int)
      */
     public void setInt(String name, int value)
     {
@@ -678,7 +703,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setLong(java.lang.String, long)
+     * @see jakarta.jms.MapMessage#setLong(java.lang.String, long)
      */
     public void setLong(String name, long value)
     {
@@ -687,7 +712,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setObject(java.lang.String, java.lang.Object)
+     * @see jakarta.jms.MapMessage#setObject(java.lang.String, java.lang.Object)
      */
     public void setObject(String name, Object value)
     {
@@ -696,7 +721,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setShort(java.lang.String, short)
+     * @see jakarta.jms.MapMessage#setShort(java.lang.String, short)
      */
     public void setShort(String name, short value)
     {
@@ -705,7 +730,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MapMessage#setString(java.lang.String, java.lang.String)
+     * @see jakarta.jms.MapMessage#setString(java.lang.String, java.lang.String)
      */
     public void setString(String name, String value)
     {
@@ -716,7 +741,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     // The methods from TextMessage
 
     /* (non-Javadoc)
-     * @see javax.jms.TextMessage#getText()
+     * @see jakarta.jms.TextMessage#getText()
      */
     public String getText()
     {
@@ -743,7 +768,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.TextMessage#setText(java.lang.String)
+     * @see jakarta.jms.TextMessage#setText(java.lang.String)
      */
     public void setText(String text)
     {
@@ -754,7 +779,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     // The methods from ObjectMessage
 
     /* (non-Javadoc)
-     * @see javax.jms.ObjectMessage#getObject()
+     * @see jakarta.jms.ObjectMessage#getObject()
      */
     public Serializable getObject()
     {
@@ -781,7 +806,7 @@ public class DwrMessage implements Message, MapMessage, TextMessage, ObjectMessa
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.ObjectMessage#setObject(java.io.Serializable)
+     * @see jakarta.jms.ObjectMessage#setObject(java.io.Serializable)
      */
     public void setObject(Serializable object)
     {

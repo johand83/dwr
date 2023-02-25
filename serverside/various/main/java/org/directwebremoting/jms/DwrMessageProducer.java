@@ -3,11 +3,12 @@ package org.directwebremoting.jms;
 import java.util.Date;
 import java.util.UUID;
 
-import javax.jms.Destination;
-import javax.jms.IllegalStateException;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageProducer;
+import jakarta.jms.CompletionListener;
+import jakarta.jms.Destination;
+import jakarta.jms.IllegalStateException;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.MessageProducer;
 
 import org.directwebremoting.Hub;
 import org.directwebremoting.HubFactory;
@@ -39,7 +40,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#close()
+     * @see jakarta.jms.MessageProducer#close()
      */
     public void close() throws JMSException
     {
@@ -47,7 +48,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#getDeliveryMode()
+     * @see jakarta.jms.MessageProducer#getDeliveryMode()
      */
     public int getDeliveryMode() throws JMSException
     {
@@ -55,7 +56,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#getDestination()
+     * @see jakarta.jms.MessageProducer#getDestination()
      */
     public Destination getDestination() throws JMSException
     {
@@ -63,7 +64,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#getDisableMessageID()
+     * @see jakarta.jms.MessageProducer#getDisableMessageID()
      */
     public boolean getDisableMessageID() throws JMSException
     {
@@ -71,7 +72,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#getDisableMessageTimestamp()
+     * @see jakarta.jms.MessageProducer#getDisableMessageTimestamp()
      */
     public boolean getDisableMessageTimestamp() throws JMSException
     {
@@ -79,7 +80,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#getPriority()
+     * @see jakarta.jms.MessageProducer#getPriority()
      */
     public int getPriority() throws JMSException
     {
@@ -87,15 +88,27 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#getTimeToLive()
+     * @see jakarta.jms.MessageProducer#getTimeToLive()
      */
     public long getTimeToLive() throws JMSException
     {
         return timeToLive;
     }
 
+    @Override
+    public void setDeliveryDelay(long l) throws JMSException
+    {
+
+    }
+
+    @Override
+    public long getDeliveryDelay() throws JMSException
+    {
+        return 0;
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#send(javax.jms.Message)
+     * @see jakarta.jms.MessageProducer#send(jakarta.jms.Message)
      */
     public void send(Message message) throws JMSException
     {
@@ -103,7 +116,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#send(javax.jms.Destination, javax.jms.Message)
+     * @see jakarta.jms.MessageProducer#send(jakarta.jms.Destination, jakarta.jms.Message)
      */
     public void send(Destination realDestination, Message message) throws JMSException
     {
@@ -111,7 +124,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#send(javax.jms.Message, int, int, long)
+     * @see jakarta.jms.MessageProducer#send(jakarta.jms.Message, int, int, long)
      */
     public void send(Message message, int realDeliveryMode, int realPriority, long realTimeToLive) throws JMSException
     {
@@ -119,7 +132,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#send(javax.jms.Destination, javax.jms.Message, int, int, long)
+     * @see jakarta.jms.MessageProducer#send(jakarta.jms.Destination, jakarta.jms.Message, int, int, long)
      */
     public void send(Destination realDestination, Message message, int realDeliveryMode, int realPriority, long realTimeToLive) throws JMSException
     {
@@ -151,8 +164,32 @@ public class DwrMessageProducer implements MessageProducer
         }
     }
 
+    @Override
+    public void send(Message message, CompletionListener completionListener) throws JMSException
+    {
+
+    }
+
+    @Override
+    public void send(Message message, int i, int i1, long l, CompletionListener completionListener) throws JMSException
+    {
+
+    }
+
+    @Override
+    public void send(Destination destination, Message message, CompletionListener completionListener) throws JMSException
+    {
+
+    }
+
+    @Override
+    public void send(Destination destination, Message message, int i, int i1, long l, CompletionListener completionListener) throws JMSException
+    {
+
+    }
+
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#setDeliveryMode(int)
+     * @see jakarta.jms.MessageProducer#setDeliveryMode(int)
      */
     public void setDeliveryMode(int deliveryMode) throws JMSException
     {
@@ -161,7 +198,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#setDisableMessageID(boolean)
+     * @see jakarta.jms.MessageProducer#setDisableMessageID(boolean)
      */
     public void setDisableMessageID(boolean disableMessageID) throws JMSException
     {
@@ -169,7 +206,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#setDisableMessageTimestamp(boolean)
+     * @see jakarta.jms.MessageProducer#setDisableMessageTimestamp(boolean)
      */
     public void setDisableMessageTimestamp(boolean disableMessageTimestamp) throws JMSException
     {
@@ -177,7 +214,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#setPriority(int)
+     * @see jakarta.jms.MessageProducer#setPriority(int)
      */
     public void setPriority(int priority) throws JMSException
     {
@@ -186,7 +223,7 @@ public class DwrMessageProducer implements MessageProducer
     }
 
     /* (non-Javadoc)
-     * @see javax.jms.MessageProducer#setTimeToLive(long)
+     * @see jakarta.jms.MessageProducer#setTimeToLive(long)
      */
     public void setTimeToLive(long timeToLive) throws JMSException
     {

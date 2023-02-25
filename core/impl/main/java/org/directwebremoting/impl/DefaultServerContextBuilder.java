@@ -25,9 +25,9 @@ public class DefaultServerContextBuilder implements ServerContextBuilder
             serverContext = StartupUtil.getSingletonServerContext();
             if (serverContext == null)
             {
-                log.fatal("Error initializing ServerContext because this is not a DWR thread and there is more than one DWR servlet in the current classloader.");
-                log.fatal("This probably means that either DWR has not been properly initialized (in which case you should delay the current action until it has)");
-                log.fatal("or that there is more than 1 DWR servlet is configured in this classloader, in which case you should provide a ServletContext to the get() yourself.");
+                log.error("Error initializing ServerContext because this is not a DWR thread and there is more than one DWR servlet in the current classloader.");
+                log.error("This probably means that either DWR has not been properly initialized (in which case you should delay the current action until it has)");
+                log.error("or that there is more than 1 DWR servlet is configured in this classloader, in which case you should provide a ServletContext to the get() yourself.");
                 throw new IllegalStateException("No singleton ServerContext see logs for possible causes and solutions.");
             }
         }

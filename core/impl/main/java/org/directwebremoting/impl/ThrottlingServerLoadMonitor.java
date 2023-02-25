@@ -124,7 +124,7 @@ public class ThrottlingServerLoadMonitor extends AbstractServerLoadMonitor
      */
     private void debug(Object o) {
         if (log.isDebugEnabled()) {
-            log.debug(o);
+            log.debug(o + "");
         }
     }
 
